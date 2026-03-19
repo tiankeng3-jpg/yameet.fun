@@ -18,64 +18,75 @@ body {
     min-height: 100vh;
 }
 
-/* Fixed navigation with scroll effect */
+/* Fixed navigation with scroll effect - 极简版 */
 .fixed-nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0);
-    padding: 0.6rem 4%;
+    padding: 0.3rem 3%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
-    transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
-    gap: 0.5rem;
+    transition: background 0.3s ease;
+    gap: 0.25rem;
 }
 
 .fixed-nav.scrolled {
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-    border-bottom: 1px solid rgba(0, 40, 80, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 40, 80, 0.05);
 }
 
 .nav-left {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    gap: 0.5rem;
     flex: 1;
+    min-width: 0; /* 防止flex溢出 */
 }
 
 .logo-area {
     font-weight: 700;
-    font-size: 1.4rem;
-    letter-spacing: -0.5px;
+    font-size: 1.1rem;
+    letter-spacing: -0.3px;
     background: linear-gradient(145deg, #003f6b, #1e6f9f);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .nav-menu {
     display: flex;
-    gap: 0.3rem;
+    gap: 0.1rem;
     align-items: center;
     flex-wrap: wrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox隐藏滚动条 */
+    padding-bottom: 0;
+    flex: 1;
+}
+
+.nav-menu::-webkit-scrollbar {
+    display: none; /* Chrome/Safari隐藏滚动条 */
 }
 
 .nav-menu a {
     color: #1a3d5c;
     text-decoration: none;
     font-weight: 500;
-    padding: 0.35rem 0.8rem;
-    border-radius: 40px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 30px;
     transition: all 0.2s;
     white-space: nowrap;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
+    line-height: 1.2;
 }
 
 .nav-menu a:hover {
@@ -86,98 +97,95 @@ body {
 .nav-menu .join-btn {
     background: linear-gradient(135deg, #10b981, #059669);
     color: white;
-    padding: 0.35rem 1.2rem;
+    padding: 0.2rem 0.8rem;
 }
 
 .nav-menu .join-btn:hover {
     background: linear-gradient(135deg, #059669, #10b981);
     color: white;
-    transform: translateY(-1px);
 }
 
 .lang-selector select {
-    padding: 0.35rem 1.8rem 0.35rem 1rem;
-    border-radius: 40px;
+    padding: 0.2rem 1.2rem 0.2rem 0.5rem;
+    border-radius: 30px;
     border: 1px solid #ccd9e6;
     background: white;
     font-weight: 500;
     cursor: pointer;
-    font-size: 0.85rem;
+    font-size: 0.7rem;
     appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%231e3a5f" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="%231e3a5f" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>');
     background-repeat: no-repeat;
-    background-position: right 0.6rem center;
-    background-size: 12px;
-    max-width: 120px;
+    background-position: right 0.3rem center;
+    background-size: 8px;
+    max-width: 85px;
+    height: 24px;
+    line-height: 1;
 }
 
-.lang-selector select:hover {
-    border-color: #1e6f9f;
-}
-
-/* Hero banner */
+/* Hero banner - 调整上边距 */
 .hero-banner {
     background: linear-gradient(125deg, #d4e2f0 0%, #b6cde3 100%);
-    margin: 5rem 4% 2rem;
-    padding: 2rem 2.5rem;
-    border-radius: 32px;
-    box-shadow: 0 15px 30px rgba(0,40,80,0.1);
+    margin: 3.5rem 3% 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 28px;
+    box-shadow: 0 12px 25px rgba(0,40,80,0.08);
 }
 
 .hero-banner h1 {
-    font-size: clamp(2rem, 5vw, 2.6rem);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
 }
 
 .region-tag {
     display: inline-block;
     background: #003f6b;
     color: white;
-    padding: 0.25rem 1.2rem;
-    border-radius: 40px;
+    padding: 0.15rem 0.8rem;
+    border-radius: 30px;
     font-weight: 600;
-    margin-bottom: 1rem;
-    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.7rem;
 }
 
 .applicable-countries {
     background: #e5f0fa;
-    border-left: 6px solid #1e6f9f;
-    padding: 0.8rem 1.5rem;
-    border-radius: 20px;
-    margin: 1.2rem 0 0.8rem;
+    border-left: 4px solid #1e6f9f;
+    padding: 0.5rem 1.2rem;
+    border-radius: 16px;
+    margin: 0.8rem 0 0.5rem;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 0.85rem;
 }
 
 /* Main content grid */
 .policy-container {
     display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 2rem;
+    grid-template-columns: 200px 1fr;
+    gap: 1.5rem;
     max-width: 1400px;
-    margin: 1.5rem 4%;
+    margin: 1rem 3%;
 }
 
 /* Table of contents */
 .policy-toc {
     background: white;
-    border-radius: 28px;
-    padding: 1.5rem 1rem;
+    border-radius: 24px;
+    padding: 1rem 0.8rem;
     border: 1px solid #e2ecf9;
     position: sticky;
-    top: 80px;
+    top: 60px;
     height: fit-content;
 }
 
 .policy-toc h4 {
     color: #1e6f9f;
-    margin-bottom: 1.2rem;
-    padding-left: 0.5rem;
-    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    padding-left: 0.3rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
 }
 
 .toc-list {
@@ -185,19 +193,19 @@ body {
 }
 
 .toc-list li {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
 }
 
 .toc-list a {
     display: block;
-    padding: 0.5rem 1rem;
-    border-radius: 40px;
+    padding: 0.3rem 0.6rem;
+    border-radius: 30px;
     color: #1a3d5c;
     text-decoration: none;
-    border-left: 3px solid transparent;
+    border-left: 2px solid transparent;
     transition: all 0.15s;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .toc-list a:hover {
@@ -210,35 +218,31 @@ body {
 .policy-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .policy-card {
     background: white;
-    border-radius: 28px;
-    padding: 1.8rem 2rem;
-    box-shadow: 0 12px 30px -8px rgba(0,35,70,0.08);
+    border-radius: 24px;
+    padding: 1.2rem 1.5rem;
+    box-shadow: 0 10px 25px -6px rgba(0,35,70,0.06);
     border: 1px solid #e2ecf9;
     transition: box-shadow 0.2s;
-}
-
-.policy-card:hover {
-    box-shadow: 0 20px 35px -8px rgba(0,79,158,0.12);
 }
 
 .card-header {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
-    margin-bottom: 1.5rem;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .card-header .icon {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
 }
 
 .card-header h2 {
-    font-size: clamp(1.3rem, 4vw, 1.7rem);
+    font-size: clamp(1.1rem, 3.5vw, 1.5rem);
     color: #0b2a41;
     font-weight: 600;
 }
@@ -247,27 +251,27 @@ body {
 .grid-2col {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
+    gap: 1rem;
 }
 
 /* Stat badges */
 .stat-badge {
     background: #f2f6fc;
-    border-radius: 18px;
-    padding: 1rem;
+    border-radius: 16px;
+    padding: 0.8rem;
     border: 1px solid #dde9f5;
 }
 
 .stat-badge p:first-child {
-    font-size: 0.85rem;
+    font-size: 0.7rem;
     color: #1e6f9f;
     text-transform: uppercase;
     font-weight: 600;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.2rem;
 }
 
 .stat-badge .value {
-    font-size: clamp(1.3rem, 4vw, 1.7rem);
+    font-size: clamp(1.1rem, 3.5vw, 1.5rem);
     font-weight: 700;
     color: #003f6b;
 }
@@ -276,72 +280,39 @@ body {
 .simple-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 0.8rem 0;
+    margin: 0.5rem 0;
 }
 
 .simple-table th {
     text-align: left;
     color: #1e4f73;
     border-bottom: 2px solid #cbddec;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .simple-table td {
-    padding: 0.6rem 0.2rem;
+    padding: 0.4rem 0.1rem;
     border-bottom: 1px solid #e2ecf9;
     color: #1f3a57;
-    font-size: 0.95rem;
-}
-
-/* Badges */
-.badge {
-    background: #1e6f9f10;
-    color: #1e6f9f;
-    border: 1px solid #1e6f9f30;
-    padding: 0.15rem 0.8rem;
-    border-radius: 40px;
-    display: inline-block;
-    margin-right: 0.4rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-/* Footnotes */
-.footnote {
-    color: #5b7a99;
     font-size: 0.85rem;
-    margin-top: 0.8rem;
-    border-top: 1px dashed #cbddec;
-    padding-top: 0.8rem;
-}
-
-/* Lists */
-ul, ol {
-    margin-left: 1.2rem;
-    color: #1f3a57;
-    font-size: 0.95rem;
-}
-
-li {
-    margin-bottom: 0.4rem;
 }
 
 /* Footer */
 .footer-note {
     text-align: center;
     color: #7b98b5;
-    margin: 2rem 4% 1rem;
+    margin: 1.5rem 3% 0.5rem;
     border-top: 1px solid #c9ddec;
-    padding-top: 1.5rem;
-    font-size: 0.85rem;
+    padding-top: 1rem;
+    font-size: 0.75rem;
 }
 
-/* RTL Support for Arabic */
+/* RTL Support */
 html[dir="rtl"] .policy-toc a {
     border-left: none;
-    border-right: 3px solid transparent;
+    border-right: 2px solid transparent;
 }
 
 html[dir="rtl"] .policy-toc a:hover {
@@ -351,258 +322,162 @@ html[dir="rtl"] .policy-toc a:hover {
 
 html[dir="rtl"] .applicable-countries {
     border-left: none;
-    border-right: 6px solid #1e6f9f;
+    border-right: 4px solid #1e6f9f;
 }
 
-/* Mobile-First Responsive Design */
-@media (max-width: 1100px) {
-    .fixed-nav {
-        padding: 0.5rem 3%;
-    }
-    .nav-left {
-        gap: 0.8rem;
-    }
-    .nav-menu a {
-        padding: 0.3rem 0.7rem;
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 900px) {
-    .fixed-nav {
-        padding: 0.5rem 3%;
-    }
-    .nav-menu {
-        gap: 0.2rem;
-    }
-    .nav-menu a {
-        padding: 0.25rem 0.6rem;
-        font-size: 0.8rem;
-    }
-    .lang-selector select {
-        padding: 0.25rem 1.5rem 0.25rem 0.8rem;
-        font-size: 0.8rem;
-        max-width: 100px;
-    }
-}
-
+/* 移动端极简导航 - 最重要部分 */
 @media (max-width: 768px) {
     .fixed-nav {
-        flex-direction: column;
-        padding: 0.4rem 3%;
+        padding: 0.2rem 2%;
     }
     
     .nav-left {
-        width: 100%;
-        justify-content: space-between;
-        gap: 0.5rem;
+        gap: 0.3rem;
     }
     
     .logo-area {
-        font-size: 1.2rem;
-    }
-    
-    .nav-menu {
-        width: 100%;
-        justify-content: center;
-        order: 3;
-        margin-top: 0.3rem;
-        padding-top: 0.3rem;
-        border-top: 1px solid rgba(0,85,170,0.1);
+        font-size: 0.95rem;
     }
     
     .nav-menu a {
-        padding: 0.25rem 0.6rem;
-        font-size: 0.75rem;
+        padding: 0.15rem 0.4rem;
+        font-size: 0.65rem;
     }
     
     .nav-menu .join-btn {
-        padding: 0.25rem 1rem;
-    }
-    
-    .lang-selector {
-        position: absolute;
-        top: 0.5rem;
-        right: 3%;
+        padding: 0.15rem 0.6rem;
     }
     
     .lang-selector select {
-        padding: 0.2rem 1.4rem 0.2rem 0.6rem;
-        font-size: 0.75rem;
-        max-width: 90px;
-        background-size: 10px;
+        padding: 0.15rem 1.1rem 0.15rem 0.4rem;
+        font-size: 0.6rem;
+        max-width: 70px;
+        height: 22px;
+        background-position: right 0.2rem center;
     }
     
     .hero-banner {
-        margin-top: 7rem;
-        padding: 1.5rem 1.2rem;
-    }
-    
-    .hero-banner h1 {
-        font-size: 1.6rem;
-    }
-    
-    .applicable-countries {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
+        margin-top: 3rem;
+        padding: 1rem 1rem;
     }
     
     .policy-container {
-        margin: 1rem 3%;
-    }
-    
-    .policy-card {
-        padding: 1.2rem 1.2rem;
-    }
-    
-    .card-header h2 {
-        font-size: 1.2rem;
-    }
-    
-    .card-header .icon {
-        font-size: 1.5rem;
-    }
-    
-    .grid-2col {
         grid-template-columns: 1fr;
-        gap: 0.8rem;
+        margin: 0.5rem 2%;
     }
     
-    .simple-table {
-        font-size: 0.85rem;
-    }
-    
-    .simple-table td, .simple-table th {
-        padding: 0.5rem 0.1rem;
-    }
-    
-    .simple-table th {
-        font-size: 0.8rem;
+    .policy-toc {
+        display: none;
     }
 }
 
 @media (max-width: 480px) {
     .fixed-nav {
-        padding: 0.3rem 2%;
-    }
-    
-    .nav-left {
-        padding-right: 85px; /* 为语言选择器留出空间 */
+        padding: 0.15rem 1.5%;
     }
     
     .logo-area {
-        font-size: 1.1rem;
+        font-size: 0.85rem;
+    }
+    
+    .nav-menu {
+        gap: 0;
     }
     
     .nav-menu a {
-        padding: 0.2rem 0.4rem;
-        font-size: 0.7rem;
+        padding: 0.1rem 0.3rem;
+        font-size: 0.6rem;
     }
     
     .nav-menu .join-btn {
-        padding: 0.2rem 0.8rem;
-    }
-    
-    .lang-selector {
-        top: 0.4rem;
+        padding: 0.1rem 0.5rem;
     }
     
     .lang-selector select {
-        padding: 0.15rem 1.3rem 0.15rem 0.5rem;
-        font-size: 0.7rem;
-        max-width: 80px;
+        padding: 0.1rem 1rem 0.1rem 0.3rem;
+        font-size: 0.55rem;
+        max-width: 62px;
+        height: 20px;
     }
     
     .hero-banner {
-        margin-top: 6.5rem;
-        padding: 1.2rem 1rem;
-        border-radius: 24px;
-    }
-    
-    .hero-banner h1 {
-        font-size: 1.4rem;
-    }
-    
-    .region-tag {
-        font-size: 0.7rem;
-        padding: 0.2rem 1rem;
-    }
-    
-    .applicable-countries {
-        border-left-width: 4px;
-        padding: 0.5rem 0.8rem;
-        font-size: 0.8rem;
-    }
-    
-    .policy-card {
-        border-radius: 24px;
-        padding: 1rem;
-    }
-    
-    .card-header h2 {
-        font-size: 1.1rem;
-    }
-    
-    .card-header .icon {
-        font-size: 1.3rem;
-    }
-    
-    .simple-table {
-        font-size: 0.75rem;
-    }
-    
-    .simple-table td, .simple-table th {
-        padding: 0.4rem 0.1rem;
-    }
-    
-    ul, ol {
-        font-size: 0.85rem;
-        margin-left: 1rem;
-    }
-    
-    .footnote {
-        font-size: 0.75rem;
-    }
-    
-    html[dir="rtl"] .nav-left {
-        padding-right: 0;
-        padding-left: 85px;
-    }
-    
-    html[dir="rtl"] .lang-selector {
-        right: auto;
-        left: 3%;
-    }
-}
-
-/* 超小屏设备 */
-@media (max-width: 360px) {
-    .nav-menu {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 0.2rem;
-    }
-    
-    .nav-menu a {
-        font-size: 0.65rem;
-        padding: 0.15rem 0.35rem;
-    }
-    
-    .nav-left {
-        padding-right: 75px;
-    }
-    
-    .hero-banner {
-        margin-top: 7rem;
+        margin-top: 2.8rem;
+        padding: 0.8rem 0.8rem;
+        border-radius: 20px;
     }
     
     .hero-banner h1 {
         font-size: 1.2rem;
     }
     
-    html[dir="rtl"] .nav-left {
-        padding-right: 0;
-        padding-left: 75px;
+    .region-tag {
+        font-size: 0.6rem;
+        padding: 0.1rem 0.6rem;
+    }
+    
+    .applicable-countries {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.8rem;
+        border-left-width: 3px;
+    }
+    
+    .policy-card {
+        padding: 0.8rem 1rem;
+        border-radius: 20px;
+    }
+    
+    .card-header h2 {
+        font-size: 1rem;
+    }
+    
+    .card-header .icon {
+        font-size: 1.2rem;
+    }
+    
+    .simple-table {
+        font-size: 0.7rem;
+    }
+    
+    .simple-table td, .simple-table th {
+        padding: 0.25rem 0.1rem;
+    }
+    
+    html[dir="rtl"] .applicable-countries {
+        border-right-width: 3px;
+    }
+}
+
+/* 超小屏设备 */
+@media (max-width: 360px) {
+    .fixed-nav {
+        padding: 0.1rem 1%;
+    }
+    
+    .logo-area {
+        font-size: 0.8rem;
+    }
+    
+    .nav-menu a {
+        font-size: 0.55rem;
+        padding: 0.1rem 0.25rem;
+    }
+    
+    .nav-menu .join-btn {
+        padding: 0.1rem 0.4rem;
+    }
+    
+    .lang-selector select {
+        max-width: 58px;
+        font-size: 0.5rem;
+        padding: 0.1rem 0.9rem 0.1rem 0.25rem;
+    }
+    
+    .hero-banner {
+        margin-top: 2.5rem;
+    }
+    
+    .hero-banner h1 {
+        font-size: 1rem;
     }
 }
 
