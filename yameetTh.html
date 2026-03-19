@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Yameet · ภาษาไทย</title>
+    <link rel="icon" href="yameetAnchor.png" type="image/png">
+    <link rel="stylesheet" href="yameet.css">
+</head>
+<body>
+    <nav class="fixed-nav" id="mainNav">
+        <div class="nav-left">
+            <div class="logo-area">YAMEET</div>
+            <div class="nav-menu">
+                <a href="#" onclick="openLine(); return false;">ติดต่อเรา</a>
+                    <script>
+                    function openLine() {
+                        const lineId = 'yameet-admin';
+                        const lineUrl = `https://line.me/R/ti/p/~${lineId}`;
+                        
+                        // 尝试打开Line
+                        window.open(lineUrl, '_blank');
+                        
+                        // 或者直接跳转
+                        // window.location.href = lineUrl;
+                    }
+                    </script>
+                <a href="https://bd.nanas.vip/bd/register?type=0" target="_blank" class="join-btn">สมัครตอนนี้</a>
+                <a href="https://ym.nanas.vip/chat/download" target="_blank" class="join-btn">ดาวน์โหลด</a>
+            </div>
+        </div>
+        <div class="lang-selector">
+            <select id="regionSelect" onchange="switchRegion(this.value)">
+                <option value="index.html">🇬🇧 English</option>
+                <option value="yameetEs.html">🇪🇸 Español</option>
+                <option value="yameetPt.html">🇧🇷 Português</option>
+                <option value="yameetTh.html">🇹🇭 ภาษาไทย</option>
+                <option value="yameetAr.html" selected>🇸🇦 العربية</option>
+                <option value="yameetTr.html">🇹🇷 Türkçe</option>
+                <option value="yameetId.html">🇮🇩 Indonesia</option>
+            </select>
+        </div>
+    </nav>
+
+    <div class="hero-banner">
+        <span class="region-tag">🇹🇭 ประเทศไทย</span>
+        <h1>นโยบายสำหรับวีเจและเอเจนซี่</h1>
+        <div class="applicable-countries">
+            🌍 ใช้สำหรับ: ประเทศไทย, ลาว, กัมพูชา, เมียนมาร์ (ชุมชนผู้ใช้ภาษาไทย)
+        </div>
+    </div>
+
+    <div class="policy-container">
+        <aside class="policy-toc">
+            <h4>📋 สารบัญด่วน</h4>
+            <ul class="toc-list">
+                <li><a href="#about">1. แพลตฟอร์ม & คุณสมบัติ</a></li>
+                <li><a href="#call-income">2. รายได้จากการโทร</a></li>
+                <li><a href="#tasks">3. ภารกิจและโบนัส</a></li>
+                <li><a href="#withdraw">4. กฎการถอนเงิน</a></li>
+                <li><a href="#agency">5. ค่าคอมมิชชั่นเอเจนซี่</a></li>
+                <li><a href="#regulations">6. กฎระเบียบและบทลงโทษ</a></li>
+                <li><a href="#process">7. ขั้นตอนการสมัคร</a></li>
+            </ul>
+        </aside>
+
+        <div class="policy-content">
+            <section id="about" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">📌</span>
+                    <h2>เกี่ยวกับ Yameet และคุณสมบัติของวีเจ</h2>
+                </div>
+                <div class="grid-2col">
+                    <div class="stat-badge">
+                        <p>🌍 ผู้ใช้งานประจำวัน</p>
+                        <div class="value">1M+</div>
+                        <p style="margin-top:0.5rem;">วิดีโอคอล 1v1 + ถ่ายทอดสด · ดำเนินงานมากว่า 5 ปี</p>
+                    </div>
+                    <div class="stat-badge">
+                        <p>👩🏻 คุณสมบัติวีเจ</p>
+                        <div class="value">18-35 ปี</div>
+                        <p style="margin-top:0.5rem;">สวย น่ารัก พูดเก่ง มีประสบการณ์<br>1v1 หรือถ่ายทอดสด</p>
+                    </div>
+                </div>
+                <div class="footnote">*วีเจหนึ่งคนมีได้เพียงหนึ่งบัญชีเท่านั้น ต้องผ่านการยืนยันตัวตนด้วยใบหน้า</div>
+            </section>
+
+            <section id="call-income" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">📞</span>
+                    <h2>รายได้จากการโทรวิดีโอ</h2>
+                </div>
+                
+                <p><strong>1,000 เพชร = 1.5$ = 45 บาท (ประมาณ)</strong></p>
+                
+                <table class="simple-table">
+                    <tr>
+                        <th>เวลา (วินาที)</th>
+                        <th>เพชรที่ได้จากผู้ใช้เก่า</th>
+                        <th>เพชรที่ได้จากผู้ใช้ใหม่</th>
+                    </tr>
+                    <tr><td>0-10</td><td>0</td><td>0</td></tr>
+                    <tr><td>11-20</td><td>0</td><td>0</td></tr>
+                    <tr><td>21-30</td><td>0</td><td>0</td></tr>
+                    <tr><td>31-40</td><td>20 หรือ 40</td><td>3 หรือ 7</td></tr>
+                    <tr><td>41-50</td><td>25 หรือ 50</td><td>4 หรือ 8</td></tr>
+                    <tr><td>51-60</td><td>30 หรือ 60</td><td>5 หรือ 10</td></tr>
+                </table>
+                
+                <p style="margin-top:1rem;"><span class="badge">หมายเหตุ</span></p>
+                <ul>
+                    <li>รายได้วีเจ เนื่องจากผู้ใช้ใหม่ใช้เพชรฟรี บางทีรับ30เพชรโทรนาที บางทีรับ60เพชรโทรนาที วีจะได้รับเพชร 1/6 ของนาทีเท่านั้น</li>
+                    <li>เนื่องจากผู้ใช้สามารถเช็คอินทุกวันที่แอพ หรือดูโฆษณาที่แอพ ดังนั้น ผู้ใช้จะได้เพชรฟรี วีจะได้รับเงินเพียง 1/6 ของนาทีนั้นเท่านั้น</li>
+                    <li>เวลาที่คอลไม่ถึง10วินาทีนั้น จะคิดเป็น10วินาทีให้ หากสายนี้≤30วินาที วีจะไม่สามารถรับเพชร</li>
+                    <li>ตอนนี้มีสาย2แบบ เป็นนาทีละ30เพชร ผู้ใช้โทร30เพชรนาที วีรับ30เพชรนาที กับ เป็นผู้ใช้โทร60เพชรนาที วีรับ60เพชรนาที โทร60เพชรนาที เป็นส่วนใหญ่</li>
+                </ul>
+                
+                <p style="margin-top:1rem;"><span class="badge">ข้อความแชท</span> ในเวลาที่คุณแชทข้อความกับผู้ใช้ ผู้ใช้ตอบกลับข้อความของคุณ คุณจะได้รับเพชรเป็นรายได้</p>
+                
+                <p class="footnote">*หากอัตราตอบที่มีประสิทธิภาพ ≤ 0.5 การถอนเงินจะเข้าสู่กระบวนการตรวจสอบ</p>
+            </section>
+
+            <section id="tasks" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">🎁</span>
+                    <h2>ภารกิจและโบนัส</h2>
+                </div>
+                
+                <p><strong>🆕 ภารกิจสำหรับสมาชิกใหม่</strong></p>
+                <ul>
+                    <li>ทำภารกิจสำหรับมือใหม่ให้เสร็จ → รับ 500 เพชร</li>
+                    <li>หลังจากทำภารกิจสำหรับมือใหม่เสร็จแล้ว ถึงจะปลดล็อคฟีเจอร์ทั้งหมด</li>
+                </ul>
+                
+                <p style="margin-top:1rem;"><strong>📸 ภารกิจประจำวัน</strong></p>
+                <p style="font-size: 1.6rem; font-weight: 700; color: #003f6b;">10 เพชร</p>
+                <p>อัปโหลดรูปภาพ (วันละครั้ง)</p>
+                
+                <p style="margin-top:1rem;"><strong>🎯 ภารกิจจับคู่ (Match) กับ ไลฟ์สด (Live)</strong></p>
+                <ul>
+                    <li>คลิกที่ 'จับคู่' หรือ 'เปิดเพื่อไลฟ์สด' เพื่อทำงานประจำวันให้สำเร็จ จะได้รับ 60-2000เพชร เพิ่มมากขึ้น</li>
+                </ul>
+                
+                <div class="footnote">
+                    *ภารกิจและกิจกรรมอาจมีการปรับเปลี่ยน กรุณาตรวจสอบในแอปพลิเคชัน
+                </div>
+            </section>
+
+            <section id="withdraw" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">💳</span>
+                    <h2>กฎการถอนเงิน</h2>
+                </div>
+                
+                <table class="simple-table">
+                    <tr>
+                        <td>เพชรขั้นต่ำในการถอน</td>
+                        <td><strong>7,000 เพชร</strong></td>
+                    </tr>
+                    <tr>
+                        <td>ความถี่ในการถอน</td>
+                        <td>วันละครั้ง</td>
+                    </tr>
+                </table>
+                
+                <p style="margin-top:1.5rem;"><strong>ขั้นตอนการถอนเงิน:</strong></p>
+                <ol>
+                    <li>กดเข้าไปที่หน้า 'ของฉัน'</li>
+                    <li>กดที่ 'รายได้ของฉัน' เพื่อดูจำนวนเพชรที่ได้รับ</li>
+                    <li>กด 'ถอนเงิน' และกรอกข้อมูลตามที่กำหนด (ชื่อ-นามสกุลต้องกรอกเป็น 'ภาษาอังกฤษ')</li>
+                    <li>หลังจากกรอกข้อมูลวิธีการรับเงินเสร็จแล้ว ให้คลิกที่ 'ถอนเงิน' ทุกครั้งที่ถอนเงิน ต้องมีเพชร ≥ 7,000 เพชร</li>
+                    <li>กด "ยืนยัน" แล้วระบบจะสร้างออเดอร์</li>
+                </ol>
+                
+                <p style="margin-top:1.5rem;"><strong>หมายเลขการถอน:</strong> หากต้องการให้แอดมินช่วยตรวจสอบ กรุณาส่ง 'รหัสการถอน' ให้แอดมิน</p>
+                
+                <p style="margin-top:1.5rem;"><strong>ข้อสำคัญ:</strong> ระบบรับประกันเฉพาะการโอนเงินเข้าบัญชีที่คุณส่งมาเท่านั้น หากเกิดข้อผิดพลาดใดๆ ขึ้น คุณจะต้องรับผิดชอบด้วยตนเอง</p>
+                
+                <p style="margin-top:1.5rem;"><strong>อัตราตอบรับ (Answer Rate):</strong></p>
+                <ul>
+                    <li>หากอัตราตอบที่มีประสิทธิภาพ ≤ 0.5 การถอนเงินจะเข้าสู่กระบวนการตรวจสอบ โดยเงินจะโอนหลังการอนุมัติ</li>
+                    <li>ขณะที่วีเจกำลังดำเนินการถอนเงินด้วยตนเอง หากแอดมินตรวจพบว่าวีเจมีพฤติกรรมผิดกติกาในระยะเวลาที่ผ่านมา แอดมินมีสิทธิ์ที่จะหักเพชรของวีเจตามที่กำหนด พร้อมทั้งระงับบัญชีของวีเจรายดังกล่าว</li>
+                </ul>
+                
+                <p class="footnote">*ระยะเวลารับเงิน: 1-3 วันทำการ</p>
+            </section>
+
+            <section id="agency" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">🏢</span>
+                    <h2>ค่าคอมมิชชั่นเอเจนซี่</h2>
+                </div>
+                <table class="simple-table">
+
+                    <tr>
+                        <th class="th-text">รายได้ร่วมทั้งหมดของวีเจ</th>
+                        <th class="th-text">เปอร์เซ็นของโบนัสที่สังกัดได้</th>
+                    </tr>
+                    <tr>
+                        <td class="th-text">$3 - $300</td>
+                        <td class="th-text">10%</td>
+                    </tr>
+                    <tr>
+                        <td class="th-text">$301 - $800</td>
+                        <td class="th-text">12%</td>
+                    </tr>
+                    <tr>
+                        <td class="th-text">$801 - $1300</td>
+                        <td class="th-text">14%</td>
+                    </tr>
+                    <tr>
+                        <td class="th-text">≥ $1301</td>
+                        <td class="th-text">16%</td>
+                    </tr>
+                    <!-- สังเกต แถว (ตามภาพ) -->
+                    <tr class="note-row">
+                        <td colspan="2" class="th-text" style="display: flex; align-items: center; gap: 6px;">
+                            <span>🔍 สังเกต</span> 
+                            รายได้สังกัดมาจากวีเจที่ทำการถอนเงินด้วยตนเองทุกสัปดาห์
+                        </td>
+                    </tr>
+                        
+                </table>
+                
+                <p style="margin-top:1.5rem;"><strong>หากรายไดทงหมดของสงกดในสปดาหน＜100บาทรายไดสปดาหนจะไมจายและสะสมถงสปดาหหนาแตหากสะสมถงสปดาหหนายงนอยกวา100บาทรายไดสงกดทงสองสปดาหนจะไมจาย</strong> </p>
+                
+                <p class="footnote">*กรุณาตรวจสอบรายละเอียดค่าคอมมิชชั่นกับผู้ดูแลเอเจนซี่ของคุณ</p>
+            </section>
+
+            <section id="regulations" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">⚖️</span>
+                    <h2>กฎระเบียบและบทลงโทษ</h2>
+                </div>
+                
+                <p><strong>📋 มาตรฐานของรูปวีเจ:</strong></p>
+                <ul>
+                    <li>ห้ามวางวิดีโอคอลผู้ใช้โดยไม่มีเหตุผลที่เหมาะสม วางสายผู้ใช้จะไม่ได้เพชร</li>
+                    <li>ห้ามวีเจบันทึกวิดีโอการโทรของผู้ใช้หรือข่มขู่ผู้ใช้ เมื่อค้นพบแล้วแบนทันที</li>
+                    <li>ห้ามปิดกล้องหรือหันโทรศัพท์ไปที่ท้องฟ้าหรือผนัง</li>
+                    <li>ห้ามเชิญผู้ใช้เข้าสู่แอปพลิเคชั่นอื่น เช่น แอปถ่ายทอดสดอื่น แอปวิดีโอแชท ฯลฯ เมื่อค้นพบก็จะถูกแบนทันที</li>
+                    <li>ห้ามเผยแพร่เนื้อหาที่ผิดกฎหมายที่เกี่ยวข้องกับภาพลามกอนาจาร การเมือง ศาสนา ลัทธิ แนวคิดสุดโต่ง</li>
+                    <li>ห้ามหลอกลวงผู้ใช้ในทุกรูปแบบใด ๆ หรือหลอกลวงผู้ใช้ในนามของ Yameet ฯลฯ</li>
+                    <li>ห้ามใช้แอปเพื่อทำธุรกรรม เช่น การขอให้ผู้ใช้โอนเงิน เดิมเงิน ฯลฯ</li>
+                    <li>ห้ามให้ข้อมูลส่วนบุคคลหรือข้อมูลส่วนตัวอื่น ๆ แก่ผู้ใช้ เช่น ที่อยู่บ้าน บัญชีธนาคาร หมายเลขโทรศัพท์มือถือ ไอดี line facebook instagram tiktok และข้อมูลอื่น ๆ ที่ไม่เปิดเผยต่อสาธารณะ และห้ามแอดไอดีผู้ใช้</li>
+                    <li>ห้ามเอาข้อมูลทางการของ Yameet ไปบอกผู้ใช้ และห้ามเผยแพร่ข้อมูลติดต่อวีเจและข้อมูลที่เป็นความลับส่วนตัว/ของบริษัทแก่ผู้ใช้</li>
+                    <li>ห้ามไลฟ์ที่สถานที่สาธารณะ เช่น สถานที่ทำงาน สี่เหลี่ยม รถยนต์ ร้านอาหาร ฯลฯ</li>
+                    <li>ห้ามตั้งชื่อหรือสถานะที่ไม่เหมาะสม และส่งเนื้อหาที่ไม่เหมาะสมไปยังผู้ใช้ เช่น เนื้อหาเกี่ยวกับภาพลามกอนาจาร ความรุนแรง คำแนะนำทางเพศ ข้อมูลการชำระเงิน ท่าทางทางเพศ (อย่างทำมือ OK) ฯลฯ</li>
+                </ul>
+                
+                <p style="margin-top:1.5rem;"><strong>📋 ตารางบทลงโทษ</strong></p>
+                <table class="simple-table">
+                    <tr>
+                        <th>หมายเลข</th>
+                        <th>การละเมิด</th>
+                        <th>ค่าปรับครั้งที่ 1</th>
+                        <th>การทำโทษครั้งที่ 1</th>
+                        <th>ค่าปรับครั้งที่ 2-4</th>
+                        <th>การทำโทษครั้งที่ 2-4</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>ปิดกล้องหรือไม่แสดงหน้าเต็ม, ทำท่าที่ไร้มารยาทต่อผู้ใช้, มีคนผู้ใหญ่เข้าอยู่ในกล้อง</td>
+                        <td>-500</td>
+                        <td>แบน4ชั่วโมง</td>
+                        <td>-1000</td>
+                        <td>แบน6ชั่วโมง</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>ให้วิธีการติดต่อแก่ผู้ใช้ (ID-line facebook instagram ฯลฯ)</td>
+                        <td>-2000</td>
+                        <td>แบน12ชั่วโมง</td>
+                        <td>-4000</td>
+                        <td>แบน24ชั่วโมง</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>ขอผู้ใช้หรือได้รับการโอนเงินของผู้ใช้ (โอนเงิน โอนเข้าบัญชี ฯลฯ)</td>
+                        <td>-2000</td>
+                        <td>แบน12ชั่วโมง</td>
+                        <td>-4000</td>
+                        <td>แบน24ชั่วโมง</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>ดึงผู้ใช้ไปยังแอปอื่น (แอปถ่ายทอดสด หรือผลิตภัณฑ์ที่แข่งขัน)</td>
+                        <td>-2000</td>
+                        <td>แบน12ชั่วโมง</td>
+                        <td>-4000</td>
+                        <td>แบน24ชั่วโมง</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>ห้ามมีเด็กเข้าไปในกล้องระหว่างคอลวิดีโอ</td>
+                        <td>-3000</td>
+                        <td>แบน24ชั่วโมง</td>
+                        <td>-6000</td>
+                        <td>แบน48ชั่วโมง</td>
+                    </tr>
+                </table>
+                
+                <p style="margin-top:1.5rem;"><strong>หมายเหตุ:</strong> ขณะที่วีเจกำลังดำเนินการถอนเงินด้วยตนเอง หากแอดมินตรวจพบว่าวีเจมีพฤติกรรมผิดกติกาในระยะเวลาที่ผ่านมา แอดมินมีสิทธิ์ที่จะหักเพชรของวีเจตามที่กำหนด พร้อมทั้งระงับบัญชีของวีเจรายดังกล่าว</p>
+                
+                <p class="footnote">*เนื้อหาของข้อบังคับนี้ใช้กับ Yameet วีเจทั้งหมด บทลงโทษที่เกี่ยวข้องจะพิจารณาจากการละเมิด หากการกระทำนั้นผิดกฎหมาย จะต้องรับผิดตามกฎหมายไทยที่กำหนดไว้</p>
+            </section>
+
+            <section id="process" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">📱</span>
+                    <h2>ขั้นตอนการสมัครเป็นวีเจ</h2>
+                </div>
+                <ol>
+                    <li>ใช้ Gmail ลงทะเบียนและเข้าสู่ระบบ YAMEET</li>
+                    <li>แก้ไขข้อมูลส่วนตัว และกรอกรหัสเชิญ (รหัสเอเจนซี่)</li>
+                    <li>ปฏิบัติตามคำแนะนำเพื่อทำการรับรองใบหน้าให้เสร็จสิ้น</li>
+                    <li>หลังจากผ่านการรับรองใบหน้าแล้ว ให้อัปโหลดรูปโปรไฟล์และรูปภาพ 3 ภาพตามที่กำหนด (รูปจริงเท่านั้น)</li>
+                    <li>คลิกรูปของขวัญ 'ภารกิจสำหรับสมาชิกใหม่'</li>
+                    <li>ปฏิบัติตาม 'ภารกิจสำหรับสมาชิกใหม่' เพื่อทำเสร็จสิ้น และรับเพชร</li>
+                    <li>หลังจากทำภารกิจสำหรับมือใหม่เสร็จแล้ว ฟีเจอร์ทั้งหมดจะถูกปลดล็อค</li>
+                </ol>
+                
+                <p style="margin-top:1.5rem;"><strong>ขั้นตอนการถอนเงิน:</strong></p>
+                <ol>
+                    <li>หลังจากทำภารกิจสำหรับมือใหม่เสร็จแล้ว ให้กดเข้าไปที่หน้า 'ของฉัน'</li>
+                    <li>กดที่ 'รายได้ของฉัน' เพื่อดูจำนวนเพชรที่ได้รับ</li>
+                    <li>กด 'ถอนเงิน' และกรอกข้อมูลตามที่กำหนด (ชื่อ-นามสกุลต้องกรอกเป็น 'ภาษาอังกฤษ')</li>
+                    <li>หลังจากกรอกข้อมูลวิธีการรับเงินเสร็จแล้ว ให้คลิกที่ 'ถอนเงิน' ทุกครั้งที่ถอนเงิน ต้องมีเพชร ≥ 7,000 เพชร</li>
+                    <li>กด "ยืนยัน" แล้วระบบจะสร้างออเดอร์</li>
+                </ol>
+                
+                <p class="footnote">*หากต้องการให้แอดมินช่วยตรวจสอบ กรุณาส่ง 'รหัสการถอน' ให้แอดมิน</p>
+            </section>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        © 2026 Yameet · นโยบายภาษาไทย · อัปเดตล่าสุด: 2026.01.14
+    </div>
+
+    <script src="yameet.js"></script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Yameet · Indonesia Region</title>
+    <link rel="icon" href="yameetAnchor.png" type="image/png">
+    <link rel="stylesheet" href="yameet.css">
+</head>
+<body>
+    <nav class="fixed-nav" id="mainNav">
+        <div class="nav-left">
+            <div class="logo-area">YAMEET</div>
+            <div class="nav-menu">
+                <a href="#" onclick="window.open('https://wa.me/' + (Math.random() < 0.5 ? '6282187071243' : '447730302215'), '_blank'); return false;">Hubungi Kami</a>
+                <a href="https://bd.nanas.vip/bd/register?type=0" target="_blank" class="join-btn">Daftar Sekarang</a>
+                <a href="https://ym.nanas.vip/chat/download" target="_blank" class="join-btn">Unduh</a>
+            </div>
+        </div>
+        <div class="lang-selector">
+            <select id="regionSelect" onchange="switchRegion(this.value)">
+                <option value="index.html">🇬🇧 English</option>
+                <option value="yameetEs.html">🇪🇸 Español</option>
+                <option value="yameetPt.html">🇧🇷 Português</option>
+                <option value="yameetTh.html">🇹🇭 ภาษาไทย</option>
+                <option value="yameetAr.html" selected>🇸🇦 العربية</option>
+                <option value="yameetTr.html">🇹🇷 Türkçe</option>
+                <option value="yameetId.html">🇮🇩 Indonesia</option>
+            </select>
+        </div>
+    </nav>
+
+    <div class="hero-banner">
+        <span class="region-tag">🇮🇩 INDONESIA</span>
+        <h1>Kebijakan Host & Agency</h1>
+        <div class="applicable-countries">
+            🌍 Berlaku untuk: Indonesia, Malaysia, Singapura (komunitas berbahasa Indonesia)
+        </div>
+    </div>
+
+    <div class="policy-container">
+        <aside class="policy-toc">
+            <h4>📋 INDEKS CEPAT</h4>
+            <ul class="toc-list">
+                <li><a href="#about">1. Platform & Persyaratan</a></li>
+                <li><a href="#call-income">2. Pendapatan Panggilan</a></li>
+                <li><a href="#tasks">3. Tugas & Bonus</a></li>
+                <li><a href="#withdraw">4. Aturan Penarikan</a></li>
+                <li><a href="#agency">5. Komisi Agency</a></li>
+                <li><a href="#regulations">6. Aturan & Hukuman</a></li>
+                <li><a href="#process">7. Proses Pendaftaran</a></li>
+            </ul>
+        </aside>
+
+        <div class="policy-content">
+            <section id="about" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">📌</span>
+                    <h2>Tentang Yameet & Persyaratan Host</h2>
+                </div>
+                <div class="grid-2col">
+                    <div class="stat-badge">
+                        <p>🌍 PENGGUNA AKTIF HARIAN</p>
+                        <div class="value">1M+</div>
+                        <p style="margin-top:0.5rem;">Video call + live streaming · 6+ tahun beroperasi</p>
+                    </div>
+                    <div class="stat-badge">
+                        <p>👩🏻 PROFIL HOST</p>
+                        <div class="value">18-35 tahun</div>
+                        <p style="margin-top:0.5rem;">Cewek cantik, muda, ramah<br>Pengalaman di 1v1 / live streaming</p>
+                    </div>
+                </div>
+                <div class="footnote">*Setiap host hanya bisa memiliki 1 akun. Verifikasi wajah diperlukan.</div>
+            </section>
+
+            <section id="call-income" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">📞</span>
+                    <h2>Pendapatan Panggilan Video</h2>
+                </div>
+                
+                <p style="margin-bottom:0.5rem;"><strong>1 diamond = 1 koin = 25 IDR</strong></p>
+                <p><strong>1000 diamond = 1.5$</strong></p>
+                
+                <table class="simple-table">
+                    <tr>
+                        <th>Tipe Panggilan</th>
+                        <th>Tarif (koin)</th>
+                    </tr>
+                    <tr>
+                        <td>Panggilan video biasa</td>
+                        <td>30-60 koin/menit</td>
+                    </tr>
+                    <tr>
+                        <td>Panggilan pencocokan (match)</td>
+                        <td>1-11 koin/menit</td>
+                    </tr>
+                </table>
+                
+                <p style="margin-top:1rem;"><span class="badge">Koin gratisan</span> Koin dari user baru dan koin cek-in user masuk ke host jadi 1/5</p>
+                
+                <p class="footnote">*Koin dari video call masuk ke host 30-60 koin/menit. Koin dari pencocokan 1-11 koin/menit.</p>
+            </section>
+
+            <section id="tasks" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">🎁</span>
+                    <h2>Tugas & Bonus</h2>
+                </div>
+                
+                <p><strong>🆕 Tugas Host Baru</strong></p>
+                <ul>
+                    <li>Selesaikan tugas pemula</li>
+                    <li>Reward: 1000 diamond + unlock semua fitur</li>
+                </ul>
+                
+                <p style="margin-top:1rem;"><strong>📸 Tugas Harian</strong></p>
+                <!--p style="font-size: 1.6rem; font-weight: 700; color: #003f6b;">10 diamond</p-->
+                <p>Lebih 1000 diamond</p>
+                
+                <p style="margin-top:1.5rem;"><strong>📺 Bonus Live Streaming</strong></p>
+                <ul>
+                    <li>Buka live streaming terus menerus selama 30 menit (tidak bisa jeda) → 60 diamond/hari</li>
+                    <li>Syarat aktifkan live streaming: level ≥ 2 & rate ≥ 0,65</li>
+                </ul>
+                
+                <p style="margin-top:1.5rem;"><strong>💰 BONUS TOTAL KOIN</strong></p>
+                <p>(total koin ≥10k & rate ≥0,75 & total panggilan ≥100)</p>
+                <p>Catatan: Bonus hanya diberikan saat penarikan pertama per minggu, dan akan masuk ke penarikan berikutnya</p>
+                
+                <table class="simple-table">
+                    <tr>
+                        <th>Total Koin</th>
+                        <th>Bonus (Koin)</th>
+                    </tr>
+                    <tr><td>≥10,000</td><td>999</td></tr>
+                    <tr><td>≥16,000</td><td>2999</td></tr>
+                    <tr><td>≥24,000</td><td>4999</td></tr>
+                    <tr><td>≥32,000</td><td>6999</td></tr>
+                    <tr><td>≥40,000</td><td>7999</td></tr>
+                    <tr><td>≥48,000</td><td>9999</td></tr>
+                    <tr><td>≥56,000</td><td>12999</td></tr>
+                    <tr><td>≥64,000</td><td>14999</td></tr>
+                    <tr><td>≥80,000</td><td>17999</td></tr>
+                </table>
+                
+                <p style="margin-top:1rem;">Contoh: Host A mencarikan 24.000 koin hari Rabu (cocok ≥24.000), dapat bonus 4999 koin tidak bersama penarikan ini, masuk gaji berikutnya.</p>
+                
+                <div class="footnote">
+                    *Tugas dan aktivitas dapat berubah. Cek bagian tugas di aplikasi untuk detail terbaru.
+                </div>
+            </section>
+
+            <section id="withdraw" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">💳</span>
+                    <h2>Aturan Penarikan</h2>
+                </div>
+                
+                <table class="simple-table">
+                    <tr>
+                        <td>Target penarikan minimum</td>
+                        <td><strong>7,000 koin</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Frekuensi penarikan</td>
+                        <td>Kapan saja</td>
+                    </tr>
+                </table>
+                
+                <p style="margin-top:1.5rem;"><strong>PENDAPATAN HOST</strong></p>
+                <table class="simple-table">
+                    <tr>
+                        <th>Total Koin</th>
+                        <th>Gajian (Rp)</th>
+                    </tr>
+                    <tr><td>6k</td><td>Rp150,000</td></tr>
+                    <tr><td>10k</td><td>Rp250,000</td></tr>
+                    <tr><td>12k</td><td>Rp300,000</td></tr>
+                    <tr><td>15k</td><td>Rp375,000</td></tr>
+                    <tr><td>20k</td><td>Rp500,000</td></tr>
+                    <tr><td>30k</td><td>Rp750,000</td></tr>
+                    <tr><td>40k</td><td>Rp1,000,000</td></tr>
+                    <tr><td>50k</td><td>Rp1,250,000</td></tr>
+                    <tr><td>60k</td><td>Rp1,500,000</td></tr>
+                    <tr><td>80k</td><td>Rp2,000,000</td></tr>
+                    <tr><td>100k</td><td>Rp2,500,000</td></tr>
+                    <tr><td>120k</td><td>Rp3,000,000</td></tr>
+                    <tr><td>150k</td><td>Rp3,750,000</td></tr>
+                </table>
+                
+                <p style="margin-top:1.5rem;"><strong>Syarat Answer Rate:</strong></p>
+                <ul>
+                    <li>Jika rate ≤ 0,5 saat penarikan, maka disetujui melalui verifikasi manual</li>
+                    <li>*panggilan pencocokan tidak terhitung ke answer rate</li>
+                </ul>
+                <p class="footnote">*Koin yang belum dicairkan bisa diakumulasi.jika host melanggar aturan,platform berhak menolak persetujuan penarikan.</p>
+            </section>
+
+            <section id="agency" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">🏢</span>
+                    <h2>Pendapatan Agency</h2>
+                </div>
+                
+                <p><strong>Penarikan minimum agency: 10$</strong></p>
+                
+                <table class="simple-table">
+                    <tr>
+                        <th>Total Penghasilan Mingguan Semua Host (koin)</th>
+                        <th>Setara $</th>
+                        <th>Komisi</th>
+                    </tr>
+                    <tr><td>≤66,600</td><td>≤100</td><td>8%</td></tr>
+                    <tr><td>66,600-333,000</td><td>100-500</td><td>10%</td></tr>
+                    <tr><td>333,000-999,000</td><td>500-1500</td><td>12%</td></tr>
+                    <tr><td>999,000-3,330,000</td><td>1500-5000</td><td>15%</td></tr>
+                    <tr><td>3,330,000-6,660,000</td><td>5000-10000</td><td>20%</td></tr>
+                    <tr><td>6,660,000-9,990,000</td><td>10000-15000</td><td>25%</td></tr>
+                </table>
+                
+                <p style="margin-top:1.5rem;"><strong>Bonus Lainnya:</strong></p>
+                <ul>
+                    <li>Bonus 2$ untuk host pertama kali dicairkan</li>
+                    <li>Agen mengajak 1 agency yang efektif akan dapatin 10$ sebagai bonus (agency efektif = belum pernah bergabung di yamet dan bisa nawarin minimal 5 host ke yamet pada minggu pertama setelah bergabung)</li>
+                </ul>
+                
+                <p style="margin-top:1.5rem;"><strong>Pendapatan BD:</strong></p>
+                <ul>
+                    <li>BD dapatkan 1% dari total pendapatan host dari Sub-agen</li>
+                    <li>Bonus BD: Dapatkan 10$ per agen efektif</li>
+                </ul>
+                
+                <p class="footnote">*Agency tidak akan menerima fee jika host tersebut sudah tidak menjadi host official yamet.</p>
+            </section>
+
+            <section id="regulations" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">⚖️</span>
+                    <h2>Aturan dan Hukuman</h2>
+                </div>
+                
+                <p><strong>Aturan untuk Live Streaming:</strong></p>
+                <ul>
+                    <li>Dilarang keras muncul konten cabul, pornografi, kekerasan, berdarah atau dibawah umur dalam live streaming</li>
+                    <li>Kami akan memeriksa kepatuhan konten dari setiap panggilan</li>
+                </ul>
+                
+                <p style="margin-top:1.5rem;"><strong>Sanksi:</strong></p>
+                <ul>
+                    <li>Sanksi dibagi dalam tingkatan: Notifikasi, Peringatan, Banned, dan Pembatalan Akun</li>
+                    <li>Jika banyak kali dilanggar, akun Anda akan ke ban selama 5 menit</li>
+                </ul>
+                
+                <p style="margin-top:1.5rem;"><strong>Pelanggaran berat (potong koin hingga blokir akun):</strong></p>
+                <ul>
+                    <li>Kirim info pribadi/minta atau menerima transfer</li>
+                    <li>Pancing user ke apk lain</li>
+                    <li>Sikapnya jelek/rate rendah</li>
+                    <li>Ancam user</li>
+                    <li>Gunakan rekaman layar</li>
+                    <li>Pakai lebih 1 akun atau eksploitasi bug yang jahat</li>
+                </ul>
+                
+                <p style="margin-top:1.5rem;"><strong>Ketentuan Akun:</strong></p>
+                <ul>
+                    <li>Untuk host yang sudah kena ban/identitasnya dibatalkan sebelum bulan Juli thn 2025 bisa masuk ulangi Yameet, bebas bergabung di agency mana, tapi 1 host hanya bisa memiliki 1 akun di Yameet</li>
+                    <li>Host tidak aktif lebih dari 3 bulan di suatu agensi tapi mau aktif kembali bisa bergabung di agency mana, tanpa hak mendapatkan bonus baru host</li>
+                </ul>
+                
+                <p class="footnote">*Peraturan bisa diubah sewaktu-waktu, dan setiap pemberitahuan dikirim di grup namun tidak nampak di peraturan juga bisa dianggap sebagai lampiran peraturan, dan punya kewenangan yang sama.</p>
+            </section>
+
+            <section id="process" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">📱</span>
+                    <h2>Proses Pendaftaran Host</h2>
+                </div>
+                <ol>
+                    <li>Daftar dan login ke YAMEET dengan email Google</li>
+                    <li>Isi informasi pribadi dan kode undangan agency</li>
+                    <li>Lakukan verifikasi wajah</li>
+                    <li>Setelah verifikasi wajah, upload foto profil dan 3 foto (foto asli required)</li>
+                    <li>Selesaikan tugas host baru untuk membuka semua fitur</li>
+                    <li>Mulai bekerja dan dapatkan penghasilan!</li>
+                </ol>
+                
+                <p style="margin-top:1.5rem;"><strong>Proses Penarikan:</strong></p>
+                <ol>
+                    <li>Target minimal 7000 koin</li>
+                    <li>Tambahkan akun penerima (pilih negara dan metode pembayaran)</li>
+                    <li>Masukkan akun penerima dengan benar</li>
+                    <li>Potongan agen: 0%–10% koin dipotong saat penarikan</li>
+                    <li>Tunggu 1-3 hari kerja setelah penarikan</li>
+                </ol>
+                
+                <p class="footnote">*Metode pembayaran: Binance, bank transfer (sesuai negara)</p>
+            </section>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        © 2026 Yameet · Kebijakan Region Indonesia · Pembaruan terakhir: 2026.01.14
+    </div>
+
+    <script src="yameet.js"></script>
+</body>
+</html>
