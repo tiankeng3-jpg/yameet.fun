@@ -20,11 +20,11 @@
         </div>
         <div class="lang-selector">
             <select id="regionSelect" onchange="switchRegion(this.value)">
-                <option value="index.html">🇬🇧 English</option>
+                <option value="index.html" selected>🇬🇧 English</option>
                 <option value="yameetEs.html">🇪🇸 Español</option>
                 <option value="yameetPt.html">🇧🇷 Português</option>
                 <option value="yameetTh.html">🇹🇭 ภาษาไทย</option>
-                <option value="yameetAr.html" selected>🇸🇦 العربية</option>
+                <option value="yameetAr.html">🇸🇦 العربية</option>
                 <option value="yameetTr.html">🇹🇷 Türkçe</option>
                 <option value="yameetId.html">🇮🇩 Indonesia</option>
             </select>
@@ -122,6 +122,20 @@
                 <p style="margin-top:1.5rem;"><strong>📺 Bonus Live Streaming</strong></p>
                 <ul>
                     <li>Buka live streaming terus menerus selama 30 menit (tidak bisa jeda) → 60 diamond/hari</li>
+                    <li>Bonus durasi live : Live 2 jam/hari bonus hingga 8000 koin</li>
+                <table class="simple-table">
+                    <tr>
+                        <th>Durasi Live</th>
+                        <th>Gift Koin</th>
+			<th>Bonus(koin)</th>
+			<th>Setara $</th>
+                    </tr>
+                    <tr><td>10h</td><td>>3000</td><td>2000</td><td>3$</td></tr>
+                    <tr><td>14h</td><td>>3000</td><td>4500</td><td>7$</td></tr>
+                    <tr><td>21h</td><td>>3000</td><td>6500</td><td>10$</td></tr>
+                    <tr><td>28h</td><td>>3000</td><td>8000</td><td>12$</td></tr>
+                </table>
+                
                     <li>Syarat aktifkan live streaming: level ≥ 2 & rate ≥ 0,65</li>
                 </ul>
                 
@@ -302,8 +316,54 @@
 
     <div class="footer-note">
         © 2026 Yameet · Kebijakan Region Indonesia · Pembaruan terakhir: 2026.01.14
-    </div>
+</div>
 
-    <script src="yameet.js"></script>
+<script>
+// 语言映射表
+const languageMap = {
+    'en': 'index.html',
+    'en-US': 'index.html',
+    'en-GB': 'index.html',
+    'es': 'yameetEs.html',
+    'es-ES': 'yameetEs.html',
+    'pt': 'yameetPt.html',
+    'pt-BR': 'yameetPt.html',
+    'th': 'yameetTh.html',
+    'th-TH': 'yameetTh.html',
+    'ar': 'yameetAr.html',
+    'ar-SA': 'yameetAr.html',
+    'tr': 'yameetTr.html',
+    'tr-TR': 'yameetTr.html',
+    'id': 'yameetId.html',
+    'id-ID': 'yameetId.html'
+};
+
+function getCurrentPage() {
+    const path = window.location.pathname;
+    const fileName = path.substring(path.lastIndexOf('/') + 1);
+    return fileName || 'index.html';
+}
+
+function getLanguagePage() {
+    const browserLang = navigator.language || navigator.userLanguage;
+    if (languageMap[browserLang]) return languageMap[browserLang];
+    const mainLang = browserLang.split('-')[0];
+    if (languageMap[mainLang]) return languageMap[mainLang];
+    return 'index.html';
+}
+
+function autoSwitchByLanguage() {
+    const currentPage = getCurrentPage();
+    const targetPage = getLanguagePage();
+    if (currentPage !== targetPage && !sessionStorage.getItem('redirected')) {
+        sessionStorage.setItem('redirected', 'true');
+        window.location.href = targetPage;
+    }
+}
+
+autoSwitchByLanguage();
+</script>
+
+<script src="yameet.js"></script>
 </body>
 </html>

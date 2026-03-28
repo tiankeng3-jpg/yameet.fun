@@ -20,11 +20,11 @@
         </div>
         <div class="lang-selector">
             <select id="regionSelect" onchange="switchRegion(this.value)">
-                <option value="index.html">🇬🇧 English</option>
+                <option value="index.html" selected>🇬🇧 English</option>
                 <option value="yameetEs.html">🇪🇸 Español</option>
                 <option value="yameetPt.html">🇧🇷 Português</option>
                 <option value="yameetTh.html">🇹🇭 ภาษาไทย</option>
-                <option value="yameetAr.html" selected>🇸🇦 العربية</option>
+                <option value="yameetAr.html">🇸🇦 العربية</option>
                 <option value="yameetTr.html">🇹🇷 Türkçe</option>
                 <option value="yameetId.html">🇮🇩 Indonesia</option>
             </select>
@@ -35,7 +35,7 @@
         <span class="region-tag">🇬🇧 ENGLISH REGION</span>
         <h1>Host & Agency Policy</h1>
         <div class="applicable-countries">
-            🌍 Applicable to: Philippines,Vietnam,Africa,India,United States, United Kingdom, Canada, Australia, New Zealand, Ireland
+            🌍 Applicable to: Philippines,Vietnam,Africa,India,United States, United Kingdom, Canada, Australia, New Zealand, Ireland<br><strong style="font-weight: 700; color: #d32f2f;">❤️If you would like to know about policies in other regions, please change the language in the top right corner</strong>
         </div>
     </div>
 
@@ -216,9 +216,55 @@
     </div>
 
     <div class="footer-note">
-        © 2026 Yameet · English Region Policy · Last updated: 2026.01.14
-    </div>
+    © 2026 Yameet · English Region Policy · Last updated: 2026.01.14
+</div>
 
-    <script src="yameet.js"></script>
+<script>
+// 语言映射表
+const languageMap = {
+    'en': 'index.html',
+    'en-US': 'index.html',
+    'en-GB': 'index.html',
+    'es': 'yameetEs.html',
+    'es-ES': 'yameetEs.html',
+    'pt': 'yameetPt.html',
+    'pt-BR': 'yameetPt.html',
+    'th': 'yameetTh.html',
+    'th-TH': 'yameetTh.html',
+    'ar': 'yameetAr.html',
+    'ar-SA': 'yameetAr.html',
+    'tr': 'yameetTr.html',
+    'tr-TR': 'yameetTr.html',
+    'id': 'yameetId.html',
+    'id-ID': 'yameetId.html'
+};
+
+function getCurrentPage() {
+    const path = window.location.pathname;
+    const fileName = path.substring(path.lastIndexOf('/') + 1);
+    return fileName || 'index.html';
+}
+
+function getLanguagePage() {
+    const browserLang = navigator.language || navigator.userLanguage;
+    if (languageMap[browserLang]) return languageMap[browserLang];
+    const mainLang = browserLang.split('-')[0];
+    if (languageMap[mainLang]) return languageMap[mainLang];
+    return 'index.html';
+}
+
+function autoSwitchByLanguage() {
+    const currentPage = getCurrentPage();
+    const targetPage = getLanguagePage();
+    if (currentPage !== targetPage && !sessionStorage.getItem('redirected')) {
+        sessionStorage.setItem('redirected', 'true');
+        window.location.href = targetPage;
+    }
+}
+
+autoSwitchByLanguage();
+</script>
+
+<script src="yameet.js"></script>
 </body>
 </html>
