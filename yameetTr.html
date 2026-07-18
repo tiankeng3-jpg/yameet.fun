@@ -43,17 +43,26 @@
         <aside class="policy-toc">
             <h4>📋 HIZLI İNDEKS</h4>
             <ul class="toc-list">
+                <!-- 1. Platform & Gereksinimler (保持不变) -->
                 <li><a href="#about">1. Platform & Gereksinimler</a></li>
-                <li><a href="#call-income">2. Görüşme Gelirleri</a></li>
-                <li><a href="#tasks">3. Görevler ve Bonuslar</a></li>
-                <li><a href="#withdraw">4. Para Çekme Kuralları</a></li>
-                <li><a href="#agency">5. Ajans Komisyonu</a></li>
-                <li><a href="#regulations">6. Kurallar ve Cezalar</a></li>
-                <li><a href="#process">7. Kayıt Süreci</a></li>
+                <!-- 7. Kayıt Süreci (从第7位移到第2位) -->
+                <li><a href="#process">2. Kayıt Süreci</a></li>
+                <!-- Kızlar için (大标题) -->
+                <li class="section-head" style="cursor: default; color: #a855f7; font-weight: 700; padding: 0.3rem 0.4rem; margin-top: 0.5rem; border-bottom: 1px dashed rgba(160, 100, 255, 0.15);">👩🏻 Kızlar için</li>
+                <!-- 以下4项缩进，放在 Kızlar için 下面 -->
+                <li><a href="#call-income" class="sub-item">Görüşme Gelirleri</a></li>
+                <li><a href="#tasks" class="sub-item">Görevler ve Bonuslar</a></li>
+                <li><a href="#withdraw" class="sub-item">Para Çekme Kuralları</a></li>
+                <li><a href="#regulations" class="sub-item">Kurallar ve Cezalar</a></li>
+                <!-- Ajans için (大标题) -->
+                <li class="section-head" style="cursor: default; color: #a855f7; font-weight: 700; padding: 0.3rem 0.4rem; margin-top: 0.5rem; border-bottom: 1px dashed rgba(160, 100, 255, 0.15);">🏢 Ajans için</li>
+                <!-- Ajans Komisyonu 缩进，放在 Ajans için 下面 -->
+                <li><a href="#agency" class="sub-item"> Ajans Komisyonu</a></li>
             </ul>
         </aside>
 
         <div class="policy-content">
+            <!-- ===== 第1部分：Platform & Gereksinimler ===== -->
             <section id="about" class="policy-card">
                 <div class="card-header">
                     <span class="icon">📌</span>
@@ -74,6 +83,27 @@
                 <div class="footnote">*Her yayıncı yalnız bir hesap kullanabilir. Gerçek kimlik doğrulaması gereklidir.</div>
             </section>
 
+            <!-- ===== 第2部分：Kayıt Süreci (从第7位移到这里) ===== -->
+            <section id="process" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">📱</span>
+                    <h2>Yayıncı Kayıt Süreci</h2>
+                </div>
+                <ol>
+                    <li>Google e-posta hesabınızla YAMEET uygulamasına kaydolun ve giriş yapın</li>
+                    <li>Yayıncı kişisel bilgilerini ve ajans kodunu doldurun</li>
+                    <li>Gerekliliklere göre yüz tanıma doğrulamasını gerçekleştirin</li>
+                    <li>Yüz tanıma doğrulamasını geçtikten sonra, profil fotoğrafınızı ve üç adet fotoğraf yükleyin (Bir ünlü, fenomen ya da tanınmış kişiye ait fotoğraflar olmamalıdır)</li>
+                    <li>"Hediye simgesi"ne tıklayarak yeni yayıncı iş rehberine girin ve tamamlayın</li>
+                    <li>Yeni yayıncı iş rehberini tamamladıktan sonra, tüm işlevlerin kilidi açılır</li>
+                </ol>
+                <p style="margin-top:1rem;"><strong>Para çekme adımları:</strong> "Ana Sayfam" → "Kazançlarım" → "Para Çekme" → Ödeme hesap bilgilerinizi doldurun → Onaylayın</p>
+            </section>
+
+            <!-- ===== Kızlar için 锚点 ===== -->
+            <div id="kizlar-icin" style="scroll-margin-top: 90px;"></div>
+
+            <!-- ===== 第3部分：Görüşme Gelirleri (移到 Kızlar için 下面) ===== -->
             <section id="call-income" class="policy-card">
                 <div class="card-header">
                     <span class="icon">📞</span>
@@ -126,6 +156,7 @@
                 <p class="footnote">1000 elmas = 2 USD</p>
             </section>
 
+            <!-- ===== 第4部分：Görevler ve Bonuslar (移到 Kızlar için 下面) ===== -->
             <section id="tasks" class="policy-card">
                 <div class="card-header">
                     <span class="icon">🎁</span>
@@ -183,6 +214,7 @@
                 </div>
             </section>
 
+            <!-- ===== 第5部分：Para Çekme Kuralları (移到 Kızlar için 下面) ===== -->
             <section id="withdraw" class="policy-card">
                 <div class="card-header">
                     <span class="icon">💳</span>
@@ -213,6 +245,50 @@
                 <p class="footnote">*1000 elmas = 2$ = 82 TL</p>
             </section>
 
+            <!-- ===== 第6部分：Kurallar ve Cezalar (移到 Kızlar için 下面) ===== -->
+            <section id="regulations" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">⚖️</span>
+                    <h2>Kurallar ve Cezalar</h2>
+                </div>
+                
+                <p><strong>Yasaklanan Davranışlar:</strong></p>
+                <ul>
+                    <li>Her yayıncı yalnız bir hesap kullanabilir. Birden fazla hesabı olan yayıncıların hesapları iptal edilir ve ödeme alamaz</li>
+                    <li>Canlı yayın sırasında uyumak</li>
+                    <li>Yayıncının uzun süre canlı yayın ekranında görünmemesi</li>
+                    <li>Canlı yayın sırasında 1V1 çağrılarının aşırı reddedilmesi (canlı yayın saati geçersiz ve ödül yok)</li>
+                    <li>Canlı yayın cevap oranı %60'ın altına düştüğünde canlı yayın fonksiyonu kapatılacaktır</li>
+                </ul>
+                
+                <p style="margin-top:1.5rem;"><strong>İletişim Bilgileri Paylaşımı:</strong></p>
+                <ul>
+                    <li>Kullanıcılarla (facebook/instagram/twitter/snapchat/whatsapp vb.) iletişim bilgileri alışverişinde bulunulmasına izin verilmez, bulunduğunda yayıncı derhal diskalifiye edilir ve maaş ödenmez</li>
+                </ul>
+                
+                <p style="margin-top:1.5rem;"><strong>Para Transferi:</strong></p>
+                <ul>
+                    <li>Yayıncıların kullanıcılardan banka bilgisi, sosyal medya vb. şeyleri istemesi sonucu hesapları kapatılır ve ödeme alamazlar</li>
+                </ul>
+                
+                <p style="margin-top:1.5rem;"><strong>Ajans Değişikliği:</strong></p>
+                <ul>
+                    <li>Yayıncıların farklı bir ajansa transfer olmak istemeleri durumunda eski ajanslarından onay almaları gerekmektedir</li>
+                    <li>Yayıncı eski ajansından izin almadan ajans değiştirdiğinde elmasları sıfırlanacak ve maaş alamayacaktır</li>
+                </ul>
+                
+                <p style="margin-top:1.5rem;"><strong>İhlal Yönetimi:</strong></p>
+                <ul>
+                    <li>Kullanıcılarla konuşurken alakasız davranışlarda bulunulması: her seferinde 200 elmas düşülecek, üç ihlal sonunda hesap iptal edilecek</li>
+                </ul>
+                
+                <p class="footnote">*Bu platform, tüm faaliyetleri ve ilgili politikaları yorumlama hakkına sahiptir.</p>
+            </section>
+
+            <!-- ===== Ajans için 锚点 ===== -->
+            <div id="ajans-icin" style="scroll-margin-top: 90px;"></div>
+
+            <!-- ===== 第7部分：Ajans Komisyonu (移到 Ajans için 下面) ===== -->
             <section id="agency" class="policy-card">
                 <div class="card-header">
                     <span class="icon">🏢</span>
@@ -261,61 +337,6 @@
                 </ul>
                 
                 <p class="footnote">*Komisyonlar haftalık olarak hesaplanır ve ödenir.</p>
-            </section>
-
-            <section id="regulations" class="policy-card">
-                <div class="card-header">
-                    <span class="icon">⚖️</span>
-                    <h2>Kurallar ve Cezalar</h2>
-                </div>
-                
-                <p><strong>Yasaklanan Davranışlar:</strong></p>
-                <ul>
-                    <li>Her yayıncı yalnız bir hesap kullanabilir. Birden fazla hesabı olan yayıncıların hesapları iptal edilir ve ödeme alamaz</li>
-                    <li>Canlı yayın sırasında uyumak</li>
-                    <li>Yayıncının uzun süre canlı yayın ekranında görünmemesi</li>
-                    <li>Canlı yayın sırasında 1V1 çağrılarının aşırı reddedilmesi (canlı yayın saati geçersiz ve ödül yok)</li>
-                    <li>Canlı yayın cevap oranı %60'ın altına düştüğünde canlı yayın fonksiyonu kapatılacaktır</li>
-                </ul>
-                
-                <p style="margin-top:1.5rem;"><strong>İletişim Bilgileri Paylaşımı:</strong></p>
-                <ul>
-                    <li>Kullanıcılarla (facebook/instagram/twitter/snapchat/whatsapp vb.) iletişim bilgileri alışverişinde bulunulmasına izin verilmez, bulunduğunda yayıncı derhal diskalifiye edilir ve maaş ödenmez</li>
-                </ul>
-                
-                <p style="margin-top:1.5rem;"><strong>Para Transferi:</strong></p>
-                <ul>
-                    <li>Yayıncıların kullanıcılardan banka bilgisi, sosyal medya vb. şeyleri istemesi sonucu hesapları kapatılır ve ödeme alamazlar</li>
-                </ul>
-                
-                <p style="margin-top:1.5rem;"><strong>Ajans Değişikliği:</strong></p>
-                <ul>
-                    <li>Yayıncıların farklı bir ajansa transfer olmak istemeleri durumunda eski ajanslarından onay almaları gerekmektedir</li>
-                    <li>Yayıncı eski ajansından izin almadan ajans değiştirdiğinde elmasları sıfırlanacak ve maaş alamayacaktır</li>
-                </ul>
-                
-                <p style="margin-top:1.5rem;"><strong>İhlal Yönetimi:</strong></p>
-                <ul>
-                    <li>Kullanıcılarla konuşurken alakasız davranışlarda bulunulması: her seferinde 200 elmas düşülecek, üç ihlal sonunda hesap iptal edilecek</li>
-                </ul>
-                
-                <p class="footnote">*Bu platform, tüm faaliyetleri ve ilgili politikaları yorumlama hakkına sahiptir.</p>
-            </section>
-
-            <section id="process" class="policy-card">
-                <div class="card-header">
-                    <span class="icon">📱</span>
-                    <h2>Yayıncı Kayıt Süreci</h2>
-                </div>
-                <ol>
-                    <li>Google e-posta hesabınızla YAMEET uygulamasına kaydolun ve giriş yapın</li>
-                    <li>Yayıncı kişisel bilgilerini ve ajans kodunu doldurun</li>
-                    <li>Gerekliliklere göre yüz tanıma doğrulamasını gerçekleştirin</li>
-                    <li>Yüz tanıma doğrulamasını geçtikten sonra, profil fotoğrafınızı ve üç adet fotoğraf yükleyin (Bir ünlü, fenomen ya da tanınmış kişiye ait fotoğraflar olmamalıdır)</li>
-                    <li>"Hediye simgesi"ne tıklayarak yeni yayıncı iş rehberine girin ve tamamlayın</li>
-                    <li>Yeni yayıncı iş rehberini tamamladıktan sonra, tüm işlevlerin kilidi açılır</li>
-                </ol>
-                <p style="margin-top:1rem;"><strong>Para çekme adımları:</strong> "Ana Sayfam" → "Kazançlarım" → "Para Çekme" → Ödeme hesap bilgilerinizi doldurun → Onaylayın</p>
             </section>
         </div>
     </div>

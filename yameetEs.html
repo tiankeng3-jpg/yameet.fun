@@ -6,6 +6,431 @@
     <title>Yameet · Español Region</title>
     <link rel="icon" href="yameetAnchor.png" type="image/png">
     <link rel="stylesheet" href="yameet.css">
+    <style>
+        /* ===== 主题: 紫黑色 + 炫酷 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0b0813;
+            background-image: radial-gradient(circle at 20% 30%, #1f1533 0%, #0a0712 90%);
+            color: #e8e0f0;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            min-height: 100vh;
+            padding-top: 70px;
+        }
+
+        /* ===== Nav fijo ===== */
+        .fixed-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 2rem;
+            background: rgba(12, 8, 22, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(160, 100, 255, 0.15);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            flex-wrap: wrap;
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #c084fc, #a855f7, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+        }
+        .nav-menu {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: #d4cce0;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: 0.25s;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+        }
+        .nav-menu a:hover {
+            color: #c084fc;
+            background: rgba(168, 85, 247, 0.12);
+        }
+        .join-btn {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+            color: white !important;
+            padding: 0.3rem 1.2rem !important;
+            border-radius: 40px !important;
+            box-shadow: 0 0 18px rgba(124, 58, 237, 0.3);
+            border: 1px solid rgba(192, 132, 252, 0.2);
+        }
+        .join-btn:hover {
+            box-shadow: 0 0 28px rgba(124, 58, 237, 0.5) !important;
+            transform: scale(1.02);
+        }
+        .lang-selector select {
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            border: 1px solid rgba(160, 100, 255, 0.25);
+            background: rgba(20, 12, 40, 0.7);
+            color: #d4cce0;
+            font-weight: 500;
+            backdrop-filter: blur(6px);
+            cursor: pointer;
+        }
+        .lang-selector select option {
+            background: #1a142b;
+            color: #e8e0f0;
+        }
+
+        /* ===== Hero ===== */
+        .hero-banner {
+            background: rgba(20, 12, 42, 0.6);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(160, 100, 255, 0.15);
+            border-radius: 40px;
+            padding: 2.5rem 2rem;
+            max-width: 1300px;
+            margin: 1.5rem auto 1rem auto;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .hero-banner h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+            background: linear-gradient(135deg, #e8e0f0, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .region-tag {
+            background: rgba(168, 85, 247, 0.18);
+            padding: 0.2rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #c084fc;
+            border: 1px solid rgba(168, 85, 247, 0.15);
+        }
+        .applicable-countries {
+            background: rgba(20, 12, 42, 0.5);
+            padding: 0.5rem 1.8rem;
+            border-radius: 60px;
+            display: inline-block;
+            font-size: 0.95rem;
+            border: 1px solid rgba(160, 100, 255, 0.1);
+            backdrop-filter: blur(4px);
+            color: #d4cce0;
+        }
+
+        /* ===== Layout ===== */
+        .policy-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1300px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        .policy-toc {
+            flex: 0 0 260px;
+            background: rgba(16, 10, 32, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(160, 100, 255, 0.1);
+            border-radius: 24px;
+            padding: 1.5rem 1.2rem;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            position: sticky;
+            top: 100px;
+            align-self: flex-start;
+            height: fit-content;
+        }
+        .policy-toc h4 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(160, 100, 255, 0.15);
+            padding-bottom: 0.75rem;
+            color: #c084fc;
+            letter-spacing: 0.5px;
+        }
+        .toc-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .toc-list li {
+            margin: 0.4rem 0;
+        }
+        .toc-list a {
+            text-decoration: none;
+            color: #d4cce0;
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: block;
+            padding: 0.25rem 0.4rem;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+        .toc-list a:hover {
+            background: rgba(168, 85, 247, 0.15);
+            color: #c084fc;
+        }
+        .toc-list .section-head {
+            font-weight: 700;
+            color: #a855f7;
+            margin-top: 0.5rem;
+            padding: 0.3rem 0.4rem;
+            border-bottom: 1px dashed rgba(160, 100, 255, 0.15);
+            display: block;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+        }
+        .toc-list .section-head:hover {
+            background: rgba(168, 85, 247, 0.08);
+            border-radius: 8px;
+        }
+        .toc-list .sub-item {
+            padding-left: 1.2rem;
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+        .policy-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* ===== Tarjetas ===== */
+        .policy-card {
+            background: rgba(16, 10, 32, 0.65);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(160, 100, 255, 0.08);
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+        }
+        .policy-card:hover {
+            border-color: rgba(160, 100, 255, 0.2);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 1px solid rgba(160, 100, 255, 0.1);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .card-header .icon {
+            font-size: 1.8rem;
+            filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.2));
+        }
+        .card-header h2 {
+            font-size: 1.6rem;
+            margin: 0;
+            color: #e8e0f0;
+            font-weight: 600;
+        }
+
+        /* ===== Tablas ===== */
+        .simple-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(10, 6, 20, 0.5);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(160, 100, 255, 0.06);
+        }
+        .simple-table th {
+            background: rgba(124, 58, 237, 0.15);
+            color: #c084fc;
+            font-weight: 600;
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(160, 100, 255, 0.08);
+        }
+        .simple-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(160, 100, 255, 0.05);
+            color: #d4cce0;
+        }
+        .simple-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, #7c3aed, #6d28d9);
+            color: white;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 0.3rem;
+            box-shadow: 0 0 14px rgba(124, 58, 237, 0.2);
+        }
+
+        .stat-badge {
+            background: rgba(10, 6, 20, 0.5);
+            border-radius: 16px;
+            padding: 1rem 1.2rem;
+            text-align: center;
+            border: 1px solid rgba(160, 100, 255, 0.06);
+        }
+        .stat-badge .value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #c084fc, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .footnote {
+            font-size: 0.9rem;
+            color: #9a8aaa;
+            margin-top: 1rem;
+            border-top: 1px dashed rgba(160, 100, 255, 0.08);
+            padding-top: 0.8rem;
+        }
+
+        ul, ol {
+            color: #d4cce0;
+            line-height: 1.8;
+            padding-left: 1.5rem;
+        }
+        ul li, ol li {
+            margin: 0.2rem 0;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: #7a6a8a;
+            border-top: 1px solid rgba(160, 100, 255, 0.06);
+            max-width: 1300px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+        }
+
+        /* ===== Tabla actividad ===== */
+        .table-activity {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(10, 6, 20, 0.4);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(160, 100, 255, 0.06);
+        }
+        .table-activity th {
+            background: rgba(124, 58, 237, 0.12);
+            color: #c084fc;
+            padding: 10px 8px;
+            text-align: center;
+            border: 1px solid rgba(160, 100, 255, 0.06);
+            font-weight: 600;
+        }
+        .table-activity td {
+            padding: 10px 8px;
+            text-align: center;
+            border: 1px solid rgba(160, 100, 255, 0.04);
+            color: #d4cce0;
+        }
+
+        .bg-glow {
+            background: rgba(124, 58, 237, 0.04);
+            border-radius: 16px;
+            padding: 1rem 1.5rem;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 800px) {
+            .policy-toc {
+                flex: 1 1 100%;
+                position: relative;
+                top: 0;
+            }
+            .grid-2col {
+                grid-template-columns: 1fr;
+            }
+            .hero-banner h1 {
+                font-size: 2rem;
+            }
+            .fixed-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                padding: 0.6rem 1rem;
+            }
+        }
+
+        .policy-card {
+            scroll-margin-top: 90px;
+        }
+
+        /* ===== scrollbar ===== */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0712;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #7c3aed;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a855f7;
+        }
+
+        /* ===== enlaces internos ===== */
+        a[href^="#"] {
+            scroll-behavior: smooth;
+        }
+
+        /* ===== botones de agencia (dentro de cards) ===== */
+        .btn-ghost {
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(160, 100, 255, 0.15);
+            color: #c084fc;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            display: inline-block;
+            transition: 0.25s;
+        }
+        .btn-ghost:hover {
+            background: rgba(124, 58, 237, 0.2);
+            border-color: #a855f7;
+        }
+    </style>
 </head>
 <body>
     <nav class="fixed-nav" id="mainNav">
@@ -14,17 +439,17 @@
             <div class="nav-menu">
                 <a href="https://wa.me/447561896068" target="_blank">Contáctenos</a>
                 <a href="https://bd.nanas.vip/bd/register?type=0" target="_blank" class="join-btn">Registro de agencia</a>
-                <a href="https://bd.nanas.vip/bd/login" target="_blank">Login de agencia</a>
+                <a href="https://bd.nanas.vip/bd/login?lang=es" target="_blank">Panel de agencia</a>
                 <a href="https://ym.nanas.vip/chat/download" target="_blank">Host.apk</a>
             </div>
         </div>
         <div class="lang-selector">
             <select id="regionSelect" onchange="switchRegion(this.value)">
                 <option value="index.html">🇬🇧 English</option>
-                <option value="yameetEs.html">🇪🇸 Español</option>
+                <option value="yameetEs.html" selected>🇪🇸 Español</option>
                 <option value="yameetPt.html">🇧🇷 Português</option>
                 <option value="yameetTh.html">🇹🇭 ภาษาไทย</option>
-                <option value="yameetAr.html" selected>🇸🇦 العربية</option>
+                <option value="yameetAr.html">🇸🇦 العربية</option>
                 <option value="yameetTr.html">🇹🇷 Türkçe</option>
                 <option value="yameetId.html">🇮🇩 Indonesia</option>
             </select>
@@ -33,7 +458,7 @@
 
     <div class="hero-banner">
         <span class="region-tag">🇪🇸 REGIÓN HISPANA</span>
-        <h1>Política para Hosts y Agencias</h1>
+        <h1>Yameet Latina</h1>
         <div class="applicable-countries">
             🌍 Aplicable en: España, México, Colombia, Argentina, Chile, Perú, Venezuela, Ecuador, Bolivia, Paraguay, Uruguay, Costa Rica, Panamá, República Dominicana, Guatemala, Honduras, El Salvador, Nicaragua
         </div>
@@ -44,16 +469,21 @@
             <h4>📋 ÍNDICE RÁPIDO</h4>
             <ul class="toc-list">
                 <li><a href="#about">1. Plataforma & Requisitos</a></li>
-                <li><a href="#call-income">2. Ingresos por Llamadas</a></li>
-                <li><a href="#tasks">3. Tareas y Bonos</a></li>
-                <li><a href="#withdraw">4. Reglas de Retiro</a></li>
-                <li><a href="#agency">5. Comisión de Agencia</a></li>
-                <li><a href="#regulations">6. Reglas y Sanciones</a></li>
-                <li><a href="#process">7. Proceso de Registro</a></li>
+                <li><a href="#process">2. Proceso de Registro</a></li>
+                <li><a href="#para-chicas" class="section-head">👩🏻 PARA CHICAS</a></li>
+                <li><a href="#call-income" class="sub-item">Ingresos por Llamadas</a></li>
+                <li><a href="#tasks" class="sub-item">Salario Básico y Tareas</a></li>
+                <li><a href="#withdraw" class="sub-item">Retiro</a></li>
+                <li><a href="#regulations" class="sub-item">Reglas y Sanciones</a></li>
+                <li><a href="#para-agencia" class="section-head">💰 PARA AGENCIA</a></li>
+                <li><a href="#agency" class="sub-item">Comisión de Agencia y bonos</a></li>
+                <li><a href="#recruitment-bonus" class="sub-item">Bonos de reclutamiento</a></li>
+                <li><a href="#invitar-subagencia" class="sub-item">Invitar subagencia</a></li>
             </ul>
         </aside>
 
         <div class="policy-content">
+            <!-- 1. Plataforma & Requisitos -->
             <section id="about" class="policy-card">
                 <div class="card-header">
                     <span class="icon">📌</span>
@@ -61,18 +491,38 @@
                 </div>
                 <div class="grid-2col">
                     <div class="stat-badge">
-                        <p>🌍 USUARIOS ACTIVOS</p>
+                        <p style="color:#b0a0c0;">🌍 USUARIOS ACTIVOS</p>
                         <div class="value">1M+</div>
-                        <p style="margin-top:0.5rem;">Video 1v1 + transmisión en vivo · 5+ años de operación estable</p>
+                        <p style="margin-top:0.5rem; color:#b0a0c0;">Video 1v1 + transmisión en vivo · 6+ años de operación estable</p>
                     </div>
                     <div class="stat-badge">
-                        <p>👩🏻 PERFIL DE LA host</p>
+                        <p style="color:#b0a0c0;">👩🏻 PERFIL DE LA host</p>
                         <div class="value">18-35 años</div>
-                        <p style="margin-top:0.5rem;">Bonita, joven, con experiencia<br>Nivel 4 requerido para transmisiones en vivo</p>
+                        <p style="margin-top:0.5rem; color:#b0a0c0;">Bonita, joven, con experiencia<br>Nivel 4 requerido para transmisiones en vivo</p>
                     </div>
                 </div>
-                <div class="footnote">*Cada host solo puede tener una cuenta. Se requiere verificación de identidad.</div>
+                <div class="footnote">*Cada host solo puede tener una cuenta válida, si se descubre que está utilizando múltiples cuentas, podría perder el acceso a todas ellas y todas las ganancias acumuladas.</div>
             </section>
+
+            <!-- 2. Proceso de Registro -->
+            <section id="process" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">📱</span>
+                    <h2>Proceso de Registro</h2>
+                </div>
+                <ol style="line-height: 1.8;">
+                    <li>Iniciar sesión con correo electrónico (Gmail)</li>
+                    <li>Completar información personal y código de invitación de agencia</li>
+                    <li>Realizar verificación facial</li>
+                    <li>Subir foto de perfil y 3 fotos (fotos reales requeridas)</li>
+                    <li>Completar 2 tareas de prueba para desbloquear funciones</li>
+                    <li>¡Comenzar a trabajar y ganar!</li>
+                </ol>
+                <p style="margin-top:1rem; color:#b0a0c0;"><strong style="color:#c084fc;">Pasos para retirar:</strong> Ir a "Mis ganancias" → Añadir cuenta Binance/Banco → Retirar una vez al día</p>
+            </section>
+
+            <!-- PARA CHICAS -->
+            <div id="para-chicas" style="scroll-margin-top: 90px;"></div>
 
             <section id="call-income" class="policy-card">
                 <div class="card-header">
@@ -93,61 +543,74 @@
                         <td>6-12 gemas/minuto</td>
                     </tr>
                 </table>
-                <p style="margin-top:1rem;"><span class="badge">Bono de recarga</span> Gana 5 o 9 gemas por cada recarga de usuario</p>
-                <p><span class="badge">Reglas de llamada</span> Las llamadas se cuentan por cada 10 segundos (no gana si la llamada termina en 30 segundos o antes)</p>
-                <p class="footnote">1000 gemas = 1.5$ ≈ 5.5 COP (tasa variable)</p>
+                <p style="margin-top:1rem; color:#b0a0c0;"><span class="badge">Bono de recarga</span> Gana 5 o 9 gemas por cada recarga de usuario</p>
+                <p style="color:#b0a0c0;"><span class="badge">Reglas de llamada</span> Las llamadas se cuentan por cada 10 segundos (no gana si la llamada termina en 30 segundos o antes)</p>
+                <p class="footnote">1000 gemas = 1.5$ ≈ 5.500 COP (tasa variable)</p>
             </section>
 
-            <section id="tasks" class="policy-card">
-                <div class="card-header">
-                    <span class="icon">🎁</span>
-                    <h2>Tareas y Bonos ( Recompensa semanal hasta 64$ <h2>
-                </div>
-                <div class="grid-2col">
-                    <div>
-                        <p><strong>🆕 Tareas para Nuevas</strong></p>
-                        <ul>
-                            <li>Tarea 1: Ver video guía</li>
-                            <li>Tarea 2: Completar 1 de 3 tareas de calificación</li>
-                            <li>Recompensa: 500 gemas + desbloquear funciones</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <p><strong>📸 Tarea Diaria (6.2$)</strong></p>
-                         <ul>
-                            <li>1.Tarea de match （3600 gemas）</li>
-                            <li>2.Tarea de Lives （350 gemas）</li>
-                            <li>3.Otras Tareas (130 gemas)</li>
-                            <li>4. 1 gema /cada mensaje</li>                            
-                        </ul> 
-                    </div>
-                    <div>
-                        <p><strong>📸 Premios semanales (21$）</strong></p>
-                         <ul>
-                            <li>1.1.Premios de promedio de duración en Match (hasta 8000 gemas)</li>
-                            <li>2.Premios de tasa (hasta 6000 gemas)</li>                         
-                        </ul> 
-                    </div>
-                </div>
-                <p style="margin-top:1rem;"><strong>Bono por recarga</strong></p>
-                <ul>
+<section id="tasks" class="policy-card">
+    <div class="card-header">
+        <span class="icon">🎁</span>
+        <h2>Salario Básico y Tareas <span style="font-size: 1rem; font-weight: 400; color: #a855f7;">(Recompensa semanal hasta 65$)</span></h2>
+    </div>
+
+    <!-- ===== 小标题 1: Salario Básico ===== -->
+    <div style="margin-bottom: 2rem;">
+        <h3 style="color: #c084fc; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.8rem; border-left: 3px solid #a855f7; padding-left: 0.8rem;">1. Salario Básico</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+            <div style="background: rgba(10, 6, 20, 0.4); border-radius: 14px; padding: 1rem 1.2rem; border: 1px solid rgba(160, 100, 255, 0.06);">
+                <p style="color:#c084fc; font-weight: 600;">📸 Salario Básico para nuevas (5$)</p>
+                <ul style="margin: 0.5rem 0 0 0;">
+                    <li>Completar la prueba de tareas y, dentro de los 7 días siguientes: </li>
+                    <li>1. Conectarse1 hora al dia durante cualquier 5 dias</li>
+                    <li>2. Conseguir 2.000 Gemas o más</li>
+                </ul>
+            </div>
+            <div style="background: rgba(10, 6, 20, 0.4); border-radius: 14px; padding: 1rem 1.2rem; border: 1px solid rgba(160, 100, 255, 0.06);">
+                <p style="color:#c084fc; font-weight: 600;">📸 Salario Básico de Match (15$)</p>
+                <ul style="margin: 0.5rem 0 0 0;">
+                    <li>Hacer Match 2 horas al día durante cualquier 5 días dentro de 1 semana</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 小标题 2: Tareas ===== -->
+    <div>
+        <h3 style="color: #c084fc; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.8rem; border-left: 3px solid #a855f7; padding-left: 0.8rem;">2. Tareas Diarias y Bono de Recarga</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+            <div style="background: rgba(10, 6, 20, 0.4); border-radius: 14px; padding: 1rem 1.2rem; border: 1px solid rgba(160, 100, 255, 0.06);">
+                <p style="color:#c084fc; font-weight: 600;">🆕 Tareas Diarias (45$ semanal)</p>
+                <ul style="margin: 0.5rem 0 0 0;">
+                   <li>1.Tarea de match （3800 gemas）</li>
+                   <li>2.Tarea de Lives （350 gemas）</li>
+                   <li>3.Otras Tareas (130 gemas)</li>
+                   <li>4. 1 gema /cada mensaje</li>                            
+                    </ul>
+            </div>
+            <div style="background: rgba(10, 6, 20, 0.4); border-radius: 14px; padding: 1rem 1.2rem; border: 1px solid rgba(160, 100, 255, 0.06);">
+                <p style="color:#c084fc; font-weight: 600;">💎 Bono de recarga</p>
+                <ul style="margin: 0.5rem 0 0 0;">
                     <li>¿Qué es? La chica puede ganar 5 o 9 gemas por cada recarga de usuario realizada por ella</li>
                     <li>¿Cómo ganar? Cuando el usuario recarga en la llamada contigo/después de la llamada/chat. Asegura que eres la última persona con la que habla antes de la recarga.</li>
                 </ul>
-                <div class="footnote">
-                    *Las actividades pueden ajustarse. Consulte la sección de tareas en la app para más detalles.
-                </div>
-            </section>
+            </div>
+        </div>
+    </div>
 
+    <div class="footnote" style="margin-top: 1.5rem;">
+        *Las actividades pueden ajustarse. Consulte la sección de tareas en la app para más detalles.
+    </div>
+</section>
             <section id="withdraw" class="policy-card">
                 <div class="card-header">
                     <span class="icon">💳</span>
-                    <h2>Reglas de Retiro</h2>
+                    <h2>Retiro</h2>
                 </div>
                 <table class="simple-table">
                     <tr>
                         <td>Mínimo para retirar</td>
-                        <td><strong>7,000 gemas</strong></td>
+                        <td><strong style="color:#c084fc;">7,000 gemas</strong></td>
                     </tr>
                     <tr>
                         <td>Frecuencia de retiro</td>
@@ -158,98 +621,17 @@
                         <td>Binance, Bancos colombianos</td>
                     </tr>
                 </table>
-                <p style="margin-top:1rem;"><strong>Para agencias:</strong></p>
-                <ul>
-                    <li>Mínimo para retirar: 7,000 gemas</li>
-                    <li>Fecha de corte: 11 am domingo, Colombia</li>
-                    <li>Fecha de envío: Miércoles o jueves</li>
                 </ul>
                 <p class="footnote">*Si el trabajo de las chicas es demasiado deficiente, Yameet se reserva el derecho de rechazar su solicitud de retiro.</p>
             </section>
 
-            <section id="agency" class="policy-card">
-                <div class="card-header">
-                    <span class="icon">🏢</span>
-                    <h2>Comisión de Agencia y bonos</h2>
-                </div>
-
-                <p style="margin-top:1.5rem;"><strong>Bonos de reclutamiento:</strong></p>
-                <ul>
-                    <li>La agencia gana 1-3$ por ingresar a cada chica nueva</li>
-                </ul>
-                <br>
-
-                <p><strong>Comisión básica:</strong></p>
-                <table class="simple-table">
-                    <tr>
-                        <th>Gemas retiradas totales (semanal)</th>
-                        <th>Comisión</th>
-                    </tr>
-                    <tr><td>66,666 gemas ≤</td><td>8%</td></tr>
-                    <tr><td>333,333 gemas ≤</td><td>10%</td></tr>
-                    <tr><td>1,000,000 gemas ≤</td><td>12%</td></tr>
-                    <tr><td>2,000,000 gemas ≤</td><td>15%</td></tr>
-                    <tr><td>3,333,333 gemas ≤</td><td>20%</td></tr>
-                    <tr><td>más</td><td>25%</td></tr>
-                </table>
-
-                <p><strong>Comisión adicional:</strong></p>
-                <table class="simple-table">
-                    <tr>
-                        <th>Número de chicas que hacen retiro (semanal)</th>
-                        <th>Comisión</th>
-                    </tr>
-                    <tr><td>2 ≤</td><td>0</td></tr>
-                    <tr><td>10 ≤</td><td>4%</td></tr>
-                    <tr><td>35 ≤</td><td>5%</td></tr>
-                    <tr><td>60 ≤</td><td>6%</td></tr>
-                    <tr><td>100 ≤</td><td>8%</td></tr>
-                    <tr><td>más</td><td>10%</td></tr>
-                </table>
-
-                <p style="margin-top:1.5rem;"><strong>Bonos de crear subagencia:</strong></p>
-                <ul>
-                    <li>La agencia ganar 5$ por invitar cada subagencia inválida (3 chicas) y 6% comisión de ganancia suya<li>
-           
-
-                <p style="margin-top:1.5rem;"><strong>Retiro para agencias:</strong></p>
-                <ul>
-                    <li>Mínimo: 7,000 gemas</li>
-                    <li>Corte: domingo 11 am (hora Colombia)</li>
-                    <li>Pago: miércoles o jueves</li>
-                    <li>Métodos: Binance, Bancos colombianos</li>
-                </ul>
-                <p class="footnote">*La comisión se paga semanalmente.</p>
-
-                <h2 style="font-size: 1.5rem; font-weight: 800; color: #d45a1a; margin: 20px 0 10px 0;">💥 Actividad de tiempo limitado (13/04 - ??)  </h2>
-                <table style="width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin: 20px 0;">
-    <thead>
-        <tr style="background: #f5f5f5;">
-            <th style="padding: 12px 8px; text-align: center; border: 1px solid #e0e0e0; font-weight: 600;">Número de reclutas</th>
-            <th style="padding: 12px 8px; text-align: center; border: 1px solid #e0e0e0; font-weight: 600;">Total de monedas requeridas</th>
-            <th style="padding: 12px 8px; text-align: center; border: 1px solid #e0e0e0; font-weight: 600;">Número medio de monedas por persona</th>
-            <th style="padding: 12px 8px; text-align: center; border: 1px solid #e0e0e0; font-weight: 600;">Bonos ($)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">200</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">400000</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">2000</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">500</td></tr>
-        <tr><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">100</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">200000</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">2000</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">250</td></tr>
-        <tr><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">50</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">100000</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">2000</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">125</td></tr>
-        <tr><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">30</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">60000</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">2000</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">75</td></tr>
-        <tr><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">20</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">40000</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">2000</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">50</td></tr>
-        <tr><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">10</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">16000</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">1600</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">25</td></tr>
-        <tr><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">5</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">7000</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">1400</td><td style="padding: 10px 8px; text-align: center; border: 1px solid #e0e0e0;">10</td></tr>
-    </tbody>
-</table>
-            </section>
-
+            <!-- Reglas y Sanciones (dentro de Para Chicas) -->
             <section id="regulations" class="policy-card">
                 <div class="card-header">
                     <span class="icon">⚖️</span>
                     <h2>Reglas y Sanciones</h2>
                 </div>
-                
-                <p><strong>Tabla de multas:</strong></p>
+                <p style="color:#c084fc;"><strong>Tabla de multas:</strong></p>
                 <table class="simple-table">
                     <tr>
                         <th>Infracción</th>
@@ -264,8 +646,7 @@
                         <td>100% saldo</td>
                     </tr>
                 </table>
-                
-                <p style="margin-top:1.5rem;"><strong>Condiciones desfavorables (bloqueo 4-72 horas o permanente + multa):</strong></p>
+                <p style="margin-top:1.5rem; color:#c084fc;"><strong>Condiciones desfavorables (bloqueo 4-72 horas o permanente + multa):</strong></p>
                 <ul>
                     <li>Bebé llorando, comer, ruido, ambiente oscuro, hablar con otras personas</li>
                     <li>Colgar la llamada</li>
@@ -274,89 +655,202 @@
                     <li>Cámara hacia cierta parte del cuerpo sin moverse</li>
                     <li>Mostrar la mitad de la cara en la cámara</li>
                 </ul>
-                
-                <p style="margin-top:1.5rem;"><strong>Faltas graves (bloqueo permanente + descontar todo el salario):</strong></p>
+                <p style="margin-top:1.5rem; color:#c084fc;"><strong>Faltas graves (bloqueo permanente + descontar todo el salario):</strong></p>
                 <ul>
                     <li>Dar información personal a los usuarios o pedirla (WhatsApp/Facebook/Snapchat etc.)</li>
                 </ul>
-                
-                <p style="margin-top:1.5rem;"><strong>Reglas para transmisiones en vivo:</strong></p>
+                <p style="margin-top:1.5rem; color:#c084fc;"><strong>Reglas para transmisiones en vivo:</strong></p>
                 <ul>
-                    <li>Requisito: Chicas lindas y jóvenes con nivel 4</li>
+                    <li>Requisito: Chicas lindas y jóvenes con nivel 2</li>
                     <li>Permitido: bailar, cantar, charlar, pedir regalos</li>
                     <li>Prohibido: contenido explícito, desnuda, con juguetes</li>
                     <li>Prohibido: bebé llorando, comer, ruido, ambiente oscuro, hablar con otras personas, ver tele</li>
                 </ul>
             </section>
 
-            <section id="process" class="policy-card">
+            <!-- PARA AGENCIA -->
+            <div id="para-agencia" style="scroll-margin-top: 90px;"></div>
+
+            <section id="agency" class="policy-card">
                 <div class="card-header">
-                    <span class="icon">📱</span>
-                    <h2>Proceso de Registro</h2>
+                    <span class="icon">🏢</span>
+                    <h2>Comisión de Agencia</h2>
                 </div>
-                <ol>
-                    <li>Iniciar sesión con correo electrónico (Gmail)</li>
-                    <li>Completar información personal y código de invitación de agencia</li>
-                    <li>Realizar verificación facial</li>
-                    <li>Subir foto de perfil y 3 fotos (fotos reales requeridas)</li>
-                    <li>Completar tareas para nuevas para desbloquear funciones</li>
-                    <li>¡Comenzar a trabajar y ganar!</li>
-                </ol>
-                <p style="margin-top:1rem;"><strong>Pasos para retirar:</strong> Ir a "Mis ganancias" → Añadir cuenta Binance/Banco → Retirar una vez al día</p>
+
+                <p style="color:#c084fc;"><strong>Comisión básica:</strong></p>
+                <table class="simple-table">
+                    <tr>
+                        <th>Gemas retiradas totales (semanal)</th>
+                        <th>Comisión</th>
+                    </tr>
+                    <tr><td>66,666 gemas ≤</td><td>8%</td></tr>
+                    <tr><td>333,333 gemas ≤</td><td>10%</td></tr>
+                    <tr><td>1,000,000 gemas ≤</td><td>12%</td></tr>
+                    <tr><td>2,000,000 gemas ≤</td><td>15%</td></tr>
+                    <tr><td>3,333,333 gemas ≤</td><td>20%</td></tr>
+                    <tr><td>más</td><td>25%</td></tr>
+                </table>
+
+                <p style="margin-top:1.2rem; color:#c084fc;"><strong>Comisión adicional:</strong></p>
+                <table class="simple-table">
+                    <tr>
+                        <th>Número de chicas que hacen retiro (semanal)</th>
+                        <th>Comisión</th>
+                    </tr>
+                    <tr><td>2 ≤</td><td>0</td></tr>
+                    <tr><td>10 ≤</td><td>4%</td></tr>
+                    <tr><td>35 ≤</td><td>5%</td></tr>
+                    <tr><td>60 ≤</td><td>6%</td></tr>
+                    <tr><td>100 ≤</td><td>8%</td></tr>
+                    <tr><td>más</td><td>10%</td></tr>
+                </table>
+
+                <p style="margin-top:1.5rem; color:#c084fc;"><strong>Retiro para agencias:</strong></p>
+                <ul>
+                    <li>Mínimo: 7,000 gemas</li>
+                    <li>Corte: domingo 11 am (hora Colombia)</li>
+                    <li>Métodos: Binance, Bancos colombianos</li>
+                </ul>
+                <p class="footnote">*Las ganancias de la semana anterior se liquidan todos los lunes. Una vez realizada el corte, la agencia podrá retirar el dinero directamente desde el panel.</p>
             </section>
+
+<section id="recruitment-bonus" class="policy-card">
+    <div class="card-header">
+        <span class="icon">🌟</span>
+        <h2>Bonos de reclutamiento</h2>
+    </div>
+
+    <!-- 招募奖金阶梯表 -->
+    <div style="overflow-x: auto; margin: 1rem 0 1.5rem 0;">
+        <table style="width: 100%; border-collapse: collapse; background: rgba(10, 6, 20, 0.5); border-radius: 16px; overflow: hidden; border: 1px solid rgba(160, 100, 255, 0.08);">
+            <thead>
+                <tr style="background: rgba(124, 58, 237, 0.15);">
+                    <th style="padding: 14px 12px; text-align: center; color: #c084fc; font-weight: 600; font-size: 1rem; border-bottom: 2px solid rgba(160, 100, 255, 0.1);">Nivel</th>
+                    <th style="padding: 14px 12px; text-align: center; color: #c084fc; font-weight: 600; font-size: 1rem; border-bottom: 2px solid rgba(160, 100, 255, 0.1);">Número de Registrado Valído</th>
+                    <th style="padding: 14px 12px; text-align: center; color: #c084fc; font-weight: 600; font-size: 1rem; border-bottom: 2px solid rgba(160, 100, 255, 0.1);">Bono/Cada Chica</th>
+                    <th style="padding: 14px 12px; text-align: center; color: #c084fc; font-weight: 600; font-size: 1rem; border-bottom: 2px solid rgba(160, 100, 255, 0.1);">Ganas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid rgba(160, 100, 255, 0.05);">
+                    <td style="padding: 12px; text-align: center; color: #d4cce0; font-weight: 700; font-size: 1.1rem;">1</td>
+                    <td style="padding: 12px; text-align: center; color: #d4cce0;">5 - 50</td>
+                    <td style="padding: 12px; text-align: center; color: #d4cce0;"><strong style="color: #c084fc;">2$</strong></td>
+                    <td style="padding: 12px; text-align: center; color: #d4cce0;"><strong style="color: #fbbf24;">10 - 100$</strong></td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(160, 100, 255, 0.05);">
+                    <td style="padding: 12px; text-align: center; color: #d4cce0; font-weight: 700; font-size: 1.1rem;">2</td>
+                    <td style="padding: 12px; text-align: center; color: #d4cce0;">51 - 200</td>
+                    <td style="padding: 12px; text-align: center; color: #d4cce0;"><strong style="color: #c084fc;">3$</strong></td>
+                    <td style="padding: 12px; text-align: center; color: #d4cce0;"><strong style="color: #fbbf24;">153 - 600$</strong></td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(160, 100, 255, 0.05);">
+                    <td style="padding: 12px; text-align: center; color: #d4cce0; font-weight: 700; font-size: 1.1rem;">3</td>
+                    <td style="padding: 12px; text-align: center; color: #d4cce0;">201 - 500</td>
+                    <td style="padding: 12px; text-align: center; color: #d4cce0;"><strong style="color: #c084fc;">4$</strong></td>
+                    <td style="padding: 12px; text-align: center; color: #d4cce0;"><strong style="color: #fbbf24;">804 - 2000$</strong></td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px; text-align: center; color: #d4cce0; font-weight: 700; font-size: 1.1rem;">4</td>
+                    <td style="padding: 12px; text-align: center; color: #d4cce0;">Más de 501</td>
+                    <td style="padding: 12px; text-align: center; color: #d4cce0;"><strong style="color: #c084fc;">5$</strong></td>
+                    <td style="padding: 12px; text-align: center; color: #d4cce0;"><strong style="color: #fbbf24;">2505$ - ∞</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p style="color:#b0a0c0;">Registrado válido: chicas que hayan completado las tareas de prueba. La agencia puede consultar el estado de registro de las chicas directamente en el panel.</p>
+    <div class="footnote">*Los bonos pueden variar según la región y el periodo promocional.</div>
+</section>
+<!-- Invitar subagencia -->
+<section id="invitar-subagencia" class="policy-card">
+    <div class="card-header">
+        <span class="icon">🤝</span>
+        <h2>Invitar subagencia</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+        <div style="background: rgba(10, 6, 20, 0.4); border-radius: 14px; padding: 1rem 1.2rem; border: 1px solid rgba(160, 100, 255, 0.06);">
+            <p style="color:#c084fc; font-weight: 600; font-size: 1.1rem;">📌 1. Cómo invitar subagencia</p>
+            <ul style="margin: 0.5rem 0 0 0;">
+                <li>La agencia invitada debe ingresar el código de la agencia invitadora al registrarse para vincular la relación.</li>
+            </ul>
+        </div>
+        <div style="background: rgba(10, 6, 20, 0.4); border-radius: 14px; padding: 1rem 1.2rem; border: 1px solid rgba(160, 100, 255, 0.06);">
+            <p style="color:#c084fc; font-weight: 600; font-size: 1.1rem;">💰 2. Comisión de subagencia a matriz</p>
+            <ul style="margin: 0.5rem 0 0 0;">
+                <li>Si la agencia invitada logra <strong style="color:#fbbf24;">3 registrados válidos</strong> dentro de los 7 días posteriores al registro, la agencia invitadora gana <strong style="color:#fbbf24;">5 USD</strong></li>
+                <li><strong style="color:#fbbf24;">6%</strong> del retiro de subagencia</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footnote" style="margin-top: 1.5rem;">
+        *Registrado válido: chicas que hayan completado las tareas de prueba.
+    </div>
+</section>
         </div>
     </div>
 
     <div class="footer-note">
-        © 2026 Yameet · Política Región Hispana · Última actualización: 2026.01.14
-</div>
+        © 2025 Yameet · Todos los derechos reservados.
+    </div>
 
-<script>
-// 语言映射表
-const languageMap = {
-    'en': 'index.html',
-    'en-US': 'index.html',
-    'en-GB': 'index.html',
-    'es': 'yameetEs.html',
-    'es-ES': 'yameetEs.html',
-    'pt': 'yameetPt.html',
-    'pt-BR': 'yameetPt.html',
-    'th': 'yameetTh.html',
-    'th-TH': 'yameetTh.html',
-    'ar': 'yameetAr.html',
-    'ar-SA': 'yameetAr.html',
-    'tr': 'yameetTr.html',
-    'tr-TR': 'yameetTr.html',
-    'id': 'yameetId.html',
-    'id-ID': 'yameetId.html'
-};
+    <script>
+        // ===== Language Mapping =====
+        const languageMap = {
+            'en': 'index.html',
+            'en-US': 'index.html',
+            'en-GB': 'index.html',
+            'es': 'yameetEs.html',
+            'es-ES': 'yameetEs.html',
+            'pt': 'yameetPt.html',
+            'pt-BR': 'yameetPt.html',
+            'th': 'yameetTh.html',
+            'th-TH': 'yameetTh.html',
+            'ar': 'yameetAr.html',
+            'ar-SA': 'yameetAr.html',
+            'tr': 'yameetTr.html',
+            'tr-TR': 'yameetTr.html',
+            'id': 'yameetId.html',
+            'id-ID': 'yameetId.html'
+        };
 
-function getCurrentPage() {
-    const path = window.location.pathname;
-    const fileName = path.substring(path.lastIndexOf('/') + 1);
-    return fileName || 'index.html';
-}
+        function getCurrentPage() {
+            const path = window.location.pathname;
+            const fileName = path.substring(path.lastIndexOf('/') + 1);
+            return fileName || 'index.html';
+        }
 
-function getLanguagePage() {
-    const browserLang = navigator.language || navigator.userLanguage;
-    if (languageMap[browserLang]) return languageMap[browserLang];
-    const mainLang = browserLang.split('-')[0];
-    if (languageMap[mainLang]) return languageMap[mainLang];
-    return 'index.html';
-}
+        function getLanguagePage() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (languageMap[browserLang]) return languageMap[browserLang];
+            const mainLang = browserLang.split('-')[0];
+            if (languageMap[mainLang]) return languageMap[mainLang];
+            return 'index.html';
+        }
 
-function autoSwitchByLanguage() {
-    const currentPage = getCurrentPage();
-    const targetPage = getLanguagePage();
-    if (currentPage !== targetPage && !sessionStorage.getItem('redirected')) {
-        sessionStorage.setItem('redirected', 'true');
-        window.location.href = targetPage;
-    }
-}
+        function autoSwitchByLanguage() {
+            const currentPage = getCurrentPage();
+            const targetPage = getLanguagePage();
+            if (currentPage !== targetPage && !sessionStorage.getItem('redirected')) {
+                sessionStorage.setItem('redirected', 'true');
+                window.location.href = targetPage;
+            }
+        }
 
-autoSwitchByLanguage();
-</script>
+        autoSwitchByLanguage();
 
-<script src="yameet.js"></script>
+        // ===== Switch region manually =====
+        function switchRegion(value) {
+            if (value) {
+                window.location.href = value;
+            }
+        }
+
+        // Make it globally accessible
+        window.switchRegion = switchRegion;
+    </script>
 </body>
 </html>

@@ -6,6 +6,134 @@
     <title>Yameet · English Region</title>
     <link rel="icon" href="yameetAnchor.png" type="image/png">
     <link rel="stylesheet" href="yameet.css">
+    <style>
+        /* ===== 新增表格样式（优化颜色，更清晰易读） ===== */
+        .bonus-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(20, 14, 40, 0.85);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(160, 100, 255, 0.2);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .bonus-table thead th {
+            background: linear-gradient(135deg, #6d28d9, #7c3aed);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid rgba(160, 100, 255, 0.3);
+        }
+        .bonus-table tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(160, 100, 255, 0.08);
+            color: #e8e0f0;
+            font-size: 0.95rem;
+        }
+        .bonus-table tbody tr {
+            transition: background 0.2s ease;
+        }
+        .bonus-table tbody tr:hover {
+            background: rgba(124, 58, 237, 0.12);
+        }
+        .bonus-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .bonus-table .region-name {
+            color: #c084fc;
+            font-weight: 600;
+        }
+        .bonus-table .bonus-amount {
+            color: #fcd34d;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-shadow: 0 0 20px rgba(252, 211, 77, 0.15);
+        }
+        .bonus-table .requirement-highlight {
+            color: #93c5fd;
+            font-weight: 600;
+        }
+
+        /* 第二个表格（Withdrawal Bonus） */
+        .bonus-table.type-withdraw thead th {
+            background: linear-gradient(135deg, #0369a1, #0e7490);
+        }
+        .bonus-table.type-withdraw .bonus-amount {
+            color: #6ee7b7;
+            text-shadow: 0 0 20px rgba(110, 231, 183, 0.15);
+        }
+        .bonus-table.type-withdraw .withdraw-count {
+            color: #fcd34d;
+            font-weight: 600;
+        }
+
+        .sub-section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #c084fc;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(160, 100, 255, 0.15);
+            letter-spacing: 0.3px;
+        }
+        .sub-section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        /* BD Income 卡片样式优化 */
+        .bd-income-card {
+            background: rgba(20, 14, 40, 0.7);
+            padding: 1.5rem 1.8rem;
+            border-radius: 16px;
+            border-left: 4px solid #7c3aed;
+            margin-bottom: 1.2rem;
+            border: 1px solid rgba(160, 100, 255, 0.1);
+            transition: 0.3s;
+        }
+        .bd-income-card:hover {
+            background: rgba(20, 14, 40, 0.9);
+            border-color: rgba(160, 100, 255, 0.25);
+            box-shadow: 0 4px 24px rgba(124, 58, 237, 0.08);
+        }
+        .bd-income-card .rule-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #7c3aed, #6d28d9);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.8rem;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            line-height: 28px;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        .bd-income-card .rule-text {
+            color: #d4cce0;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+        }
+        .bd-income-card .highlight-text {
+            color: #c084fc;
+            font-weight: 700;
+        }
+        .bd-income-card .highlight-gold {
+            color: #fcd34d;
+            font-weight: 700;
+        }
+        .bd-income-card .highlight-blue {
+            color: #93c5fd;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
     <nav class="fixed-nav" id="mainNav">
@@ -35,7 +163,7 @@
         <span class="region-tag">🇬🇧 ENGLISH REGION</span>
         <h1>Host & Agency Policy</h1>
         <div class="applicable-countries">
-            🌍 Applicable to: Philippines,Vietnam,Africa,India,United States, United Kingdom, Canada, Australia, New Zealand, Ireland<br><strong style="font-weight: 700; color: #d32f2f;">❤️If you would like to know about policies in other regions, please change the language in the top right corner</strong>
+            🌍 Applicable to: Philippines,Vietnam,Africa,India,United States, United Kingdom, Canada, Australia, New Zealand, Ireland<br><strong style="font-weight: 700; color: #f87171;">❤️If you would like to know about policies in other regions, please change the language in the top right corner</strong>
         </div>
     </div>
 
@@ -44,16 +172,21 @@
             <h4>📋 QUICK INDEX</h4>
             <ul class="toc-list">
                 <li><a href="#about">1. Platform & Requirements</a></li>
-                <li><a href="#call-income">2. Call Income</a></li>
-                <li><a href="#tasks">3. Tasks & Bonuses</a></li>
-                <li><a href="#withdraw">4. Withdrawal Rules</a></li>
-                <li><a href="#agency">5. Agency Commission</a></li>
-                <li><a href="#regulations">6. Regulations & Penalties</a></li>
-                <li><a href="#process">7. Registration Process</a></li>
+                <li><a href="#process">2. Registration Process</a></li>
+                <li class="section-head" style="cursor: default; color: #a855f7; font-weight: 700; padding: 0.3rem 0.4rem; margin-top: 0.5rem; border-bottom: 1px dashed rgba(160, 100, 255, 0.15);">👩🏻 FOR GIRLS</li>
+                <li><a href="#call-income" class="sub-item">Call Income</a></li>
+                <li><a href="#tasks" class="sub-item">Tasks & Bonuses</a></li>
+                <li><a href="#withdraw" class="sub-item">Withdrawal Rules</a></li>
+                <li><a href="#regulations" class="sub-item">Regulations & Penalties</a></li>
+                <li class="section-head" style="cursor: default; color: #a855f7; font-weight: 700; padding: 0.3rem 0.4rem; margin-top: 0.5rem; border-bottom: 1px dashed rgba(160, 100, 255, 0.15);">🏢 FOR AGENCY</li>
+                <li><a href="#agency" class="sub-item">Agency Commission</a></li>
+                <li><a href="#bonus" class="sub-item">Bonus</a></li>
+                <li><a href="#bd-income" class="sub-item">BD Income (Recruiting sub-agency)</a></li>
             </ul>
         </aside>
 
         <div class="policy-content">
+            <!-- ===== 第1部分：Platform & Requirements ===== -->
             <section id="about" class="policy-card">
                 <div class="card-header">
                     <span class="icon">📌</span>
@@ -74,6 +207,27 @@
                 <div class="footnote">*Each host can only have one account. Real identity verification required.</div>
             </section>
 
+            <!-- ===== 第2部分：Registration Process ===== -->
+            <section id="process" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">📱</span>
+                    <h2>Host Registration Process</h2>
+                </div>
+                <ol>
+                    <li>Login with email (Gmail)</li>
+                    <li>Fill in agency invitation code</li>
+                    <li>Read instructions & complete face verification</li>
+                    <li>Upload profile pictures (real photos required)</li>
+                    <li>Complete newbie tasks to unlock all features</li>
+                    <li>Start working and earning!</li>
+                </ol>
+                <p style="margin-top:1rem;"><strong>Withdrawal steps:</strong> Go to earnings page → Add payment account → Withdraw once daily→ Wait for 1-3 days to process</p>
+            </section>
+
+            <!-- ===== FOR GIRLS 锚点 ===== -->
+            <div id="for-girls" style="scroll-margin-top: 90px;"></div>
+
+            <!-- ===== 第3部分：Call Income ===== -->
             <section id="call-income" class="policy-card">
                 <div class="card-header">
                     <span class="icon">📞</span>
@@ -100,10 +254,11 @@
                         <td colspan="2">1:1 ratio (received diamonds equal to gift price)</td>
                     </tr>
                 </table>
-                <p style="margin-top:1rem;"><span class="badge">User top-up</span> Can extend call duration for both call types.</p>
+                <p style="margin-top:1rem;">Calls using free diamonds, including those from new users and user check-in activities, will be calculated at 1/6 of the standard call price. User top-up can extend call duration for both call types.</p>
                 <p class="footnote">1,000 diamonds = 1 USD. Answer rate ≥0.5 required for normal withdrawal.</p>
             </section>
 
+            <!-- ===== 第4部分：Tasks & Bonuses ===== -->
             <section id="tasks" class="policy-card">
                 <div class="card-header">
                     <span class="icon">🎁</span>
@@ -134,6 +289,7 @@
                 </div>
             </section>
 
+            <!-- ===== 第5部分：Withdrawal Rules ===== -->
             <section id="withdraw" class="policy-card">
                 <div class="card-header">
                     <span class="icon">💳</span>
@@ -160,6 +316,27 @@
                 <p class="footnote">*If answer rate is below 0.5, hosts won't be able to do the withdrawal successfully.</p>
             </section>
 
+            <!-- ===== 第6部分：Regulations & Penalties ===== -->
+            <section id="regulations" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">⚖️</span>
+                    <h2>Rules & Penalties (ranging from diamonds deductions to account suspension)</h2>
+                </div>
+                <ul>
+                    <li>Each girl can only have one account</li>
+                    <li>Do not block the camera or point the camera at the wall or ceiling</li>
+                    <li>Do not answer the phone outdoors or in a noisy environment</li>
+                    <li>It is forbidden to exchange contact information with users</li>
+                    <li>It is forbidden to direct users to another apps</li>
+                    <li>It is forbidden to require users to transfer money</li>
+                    <li>Obscene, pornographic, violent, gory, or underage content is prohibited</li>
+                </ul>
+            </section>
+
+            <!-- ===== FOR AGENCY 锚点 ===== -->
+            <div id="for-agency" style="scroll-margin-top: 90px;"></div>
+
+            <!-- ===== 第7部分：Agency Commission ===== -->
             <section id="agency" class="policy-card">
                 <div class="card-header">
                     <span class="icon">🏢</span>
@@ -178,39 +355,103 @@
                     <tr><td>≤6,660,000</td><td>≤6,660</td><td>20%</td></tr>
                     <tr><td>Max</td><td>Max</td><td>25%</td></tr>
                 </table>
-                <p class="footnote">*Hosts' salaries will not change with different answer rates or amount of diamonds.</p>
             </section>
 
-            <section id="regulations" class="policy-card">
+            <!-- ===== 第8部分：Bonus (新增，对应前两张图) ===== -->
+            <section id="bonus" class="policy-card">
                 <div class="card-header">
-                    <span class="icon">⚖️</span>
-                    <h2>Rules & Penalties</h2>
+                    <span class="icon">🎯</span>
+                    <h2>Bonus</h2>
                 </div>
-                <ul>
-                    <li>Each girl can only have one account</li>
-                    <li>Do not block the camera or point the camera at the wall or ceiling</li>
-                    <li>Do not answer the phone outdoors or in a noisy environment</li>
-                    <li>It is forbidden to exchange contact information with users</li>
-                    <li>It is forbidden to direct users to another apps</li>
-                    <li>It is forbidden to require users to transfer money</li>
-                    <li>Obscene, pornographic, violent, gory, or underage content is prohibited</li>
-                </ul>
+
+                <!-- 第一张图：Weekly Registration Bonus -->
+                <h4 class="sub-section-title">📋 Weekly Registration Bonus</h4>
+                <p style="color: #93c5fd; margin-bottom: 0.75rem; font-weight: 500;">📅 Period: Monday to Sunday</p>
+                <table class="bonus-table">
+                    <thead>
+                        <tr>
+                            <th>🌍 Region</th>
+                            <th>📌 Requirements (new hosts)</th>
+                            <th>💰 Bonus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="region-name">Africa (Madagascar)</span></td>
+                            <td><span class="requirement-highlight">No minimum target</span></td>
+                            <td><span class="bonus-amount">$1 / per new host</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="region-name">Africa (other regions)</span></td>
+                            <td><span class="requirement-highlight">≥ 5 new hosts</span></td>
+                            <td><span class="bonus-amount">$1 / per new host</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="region-name">Philippines / Vietnam</span></td>
+                            <td><span class="requirement-highlight">≥ 3 new hosts</span></td>
+                            <td><span class="bonus-amount">$1 / per new host</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- 第二张图：Withdrawal Bonus -->
+                <h4 class="sub-section-title">💎 Withdrawal Bonus</h4>
+                <table class="bonus-table type-withdraw">
+                    <thead>
+                        <tr>
+                            <th>📊 Requirements (withdrawals)</th>
+                            <th>💰 Bonus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="withdraw-count">≥ 6</span></td>
+                            <td><span class="bonus-amount">$3</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="withdraw-count">≥ 12</span></td>
+                            <td><span class="bonus-amount">$6</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="withdraw-count">≥ 18</span></td>
+                            <td><span class="bonus-amount">$9</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="withdraw-count">≥ 24</span></td>
+                            <td><span class="bonus-amount">$12</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="withdraw-count">≥ 30</span></td>
+                            <td><span class="bonus-amount">$15</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="footnote">*Bonuses are calculated based on the number of qualifying hosts' withdrawals during the weekly period. Terms may be adjusted.</div>
             </section>
 
-            <section id="process" class="policy-card">
+            <!-- ===== 第9部分：BD Income (Recruiting sub-agency) ===== -->
+            <section id="bd-income" class="policy-card">
                 <div class="card-header">
-                    <span class="icon">📱</span>
-                    <h2>Host Registration Process</h2>
+                    <span class="icon">📈</span>
+                    <h2>BD Income (Recruiting sub-agency)</h2>
                 </div>
-                <ol>
-                    <li>Login with email (Gmail)</li>
-                    <li>Fill in agency invitation code</li>
-                    <li>Read instructions & complete face verification</li>
-                    <li>Upload profile pictures (real photos required)</li>
-                    <li>Complete newbie tasks to unlock all features</li>
-                    <li>Start working and earning!</li>
-                </ol>
-                <p style="margin-top:1rem;"><strong>Withdrawal steps:</strong> Go to earnings page → Add payment account → Withdraw once daily→ Wait for 1-3 days to process</p>
+
+                <div class="bd-income-card">
+                    <div class="rule-text">
+                        <span class="rule-number">1</span>
+                        <span>Parent agencies can earn <span class="highlight-text">1%</span> from sub-agency hosts' <span class="highlight-gold">withdrawal income</span>.</span>
+                    </div>
+                </div>
+
+                <div class="bd-income-card">
+                    <div class="rule-text">
+                        <span class="rule-number">2</span>
+                        <span>In the first week after a sub-agency joins Yameet, the parent agency can earn a <span class="highlight-gold">$5 bonus</span> if the sub-agency recruits more than <span class="highlight-blue">5 new hosts</span> and generates over <span class="highlight-text">5,000 diamonds</span> in total revenue.</span>
+                    </div>
+                </div>
+
+                <div class="footnote">*BD Income is calculated automatically based on sub-agency performance. Contact support for details.</div>
             </section>
         </div>
     </div>

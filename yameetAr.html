@@ -5,7 +5,359 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Yameet · العربية</title>
     <link rel="icon" href="yameetAnchor.png" type="image/png">
-    <link rel="stylesheet" href="yameet.css">
+    <style>
+        /* ===== 重置 & 基础 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', 'Tahoma', system-ui, -apple-system, sans-serif;
+            background: #f8faff;
+            color: #1e2b3c;
+            padding-top: 80px;
+            line-height: 1.6;
+        }
+        /* ===== 导航 ===== */
+        .fixed-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 999;
+            background: #ffffffdd;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            padding: 0.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            direction: rtl;
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            color: #003f6b;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: #1e2b3c;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.3rem 0.6rem;
+            border-radius: 30px;
+            transition: 0.2s;
+        }
+        .nav-menu a:hover {
+            background: #eef3fa;
+        }
+        .nav-menu .join-btn {
+            background: #003f6b;
+            color: #fff;
+            padding: 0.3rem 1rem;
+        }
+        .nav-menu .join-btn:hover {
+            background: #002b4a;
+        }
+        .lang-selector select {
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            border: 1px solid #d0dbe8;
+            background: #fff;
+            font-size: 0.85rem;
+            color: #1e2b3c;
+            outline: none;
+            cursor: pointer;
+        }
+        /* ===== hero ===== */
+        .hero-banner {
+            background: linear-gradient(145deg, #e4edf5, #d4e2f0);
+            padding: 2rem 2rem 1.8rem;
+            text-align: center;
+            margin: 0 1.5rem 1.5rem;
+            border-radius: 40px 40px 20px 20px;
+            box-shadow: 0 6px 18px rgba(0, 50, 80, 0.06);
+        }
+        .region-tag {
+            display: inline-block;
+            background: #003f6b;
+            color: #fff;
+            padding: 0.2rem 1.4rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.6rem;
+        }
+        .hero-banner h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #003f6b;
+            margin: 0.4rem 0;
+        }
+        .applicable-countries {
+            background: #ffffffb0;
+            backdrop-filter: blur(4px);
+            padding: 0.6rem 1.2rem;
+            border-radius: 60px;
+            display: inline-block;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #003f6b;
+            margin-top: 0.4rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        /* ===== تخطيط الصفحة ===== */
+        .policy-container {
+            display: flex;
+            gap: 2rem;
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 0 1.5rem 3rem;
+            align-items: flex-start;
+            direction: rtl;
+        }
+        .policy-toc {
+            flex: 0 0 240px;
+            background: #ffffffcc;
+            backdrop-filter: blur(4px);
+            border-radius: 28px;
+            padding: 1.2rem 0.8rem;
+            box-shadow: 0 8px 24px rgba(0, 30, 60, 0.04);
+            border: 1px solid #eaeef5;
+            position: sticky;
+            top: 100px;
+        }
+        .policy-toc h4 {
+            font-size: 1rem;
+            color: #003f6b;
+            margin-bottom: 1rem;
+            padding-right: 0.5rem;
+            border-right: 4px solid #003f6b;
+            padding-right: 0.8rem;
+        }
+        .toc-list {
+            list-style: none;
+            padding: 0;
+        }
+        .toc-list li {
+            margin-bottom: 0.6rem;
+        }
+        .toc-list a {
+            display: block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 40px;
+            color: #1e2b3c;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: 0.2s;
+            font-weight: 450;
+        }
+        .toc-list a:hover {
+            background: #e4edf5;
+            color: #003f6b;
+        }
+        .toc-list .section-head {
+            font-weight: 700;
+            color: #003f6b;
+            padding: 0.3rem 0.8rem;
+            margin-top: 0.3rem;
+            display: block;
+            font-size: 0.9rem;
+            cursor: default;
+        }
+        .toc-list .sub-item {
+            padding-right: 1.5rem;
+            font-weight: 400;
+            font-size: 0.85rem;
+        }
+        .policy-content {
+            flex: 1;
+            min-width: 0;
+        }
+        /* ===== بطاقات السياسة ===== */
+        .policy-card {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 24px rgba(0, 30, 60, 0.04);
+            border: 1px solid #eef2f8;
+            transition: 0.2s;
+            scroll-margin-top: 90px;
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid #eaf0f8;
+            padding-bottom: 0.6rem;
+        }
+        .card-header .icon {
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+        .card-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #003f6b;
+            margin: 0;
+        }
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 0.5rem 0;
+        }
+        .stat-badge {
+            background: #f4f8fe;
+            padding: 1rem 1.2rem;
+            border-radius: 24px;
+            text-align: center;
+        }
+        .stat-badge .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #003f6b;
+            margin: 0.2rem 0;
+        }
+        .badge {
+            background: #003f6b;
+            color: #fff;
+            padding: 0.1rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .footnote {
+            margin-top: 1rem;
+            font-size: 0.88rem;
+            color: #4a5f72;
+            border-top: 1px dashed #dce5ef;
+            padding-top: 0.7rem;
+        }
+        /* ===== جداول ===== */
+        .simple-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.6rem 0 0.2rem;
+            font-size: 0.95rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+        .simple-table th,
+        .simple-table td {
+            padding: 0.7rem 1.2rem;
+            text-align: right;
+            border-bottom: 1px solid #eaf0f8;
+        }
+        .simple-table th {
+            background: #eaf1fa;
+            color: #003f6b;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .simple-table tr:last-child td {
+            border-bottom: none;
+        }
+        .simple-table tr:hover td {
+            background: #f8faff;
+        }
+        .policy-card ul, .policy-card ol {
+            padding-right: 1.8rem;
+            margin: 0.4rem 0;
+        }
+        .policy-card li {
+            margin-bottom: 0.3rem;
+        }
+        .policy-card p {
+            margin: 0.5rem 0;
+        }
+        .footer-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #5b6f84;
+            padding: 1.2rem 1rem 2.5rem;
+            border-top: 1px solid #e2eaf2;
+            max-width: 1360px;
+            margin: 0 auto;
+            direction: rtl;
+        }
+        /* ===== استجابة ===== */
+        @media (max-width: 900px) {
+            .policy-container {
+                flex-direction: column;
+            }
+            .policy-toc {
+                position: relative;
+                top: 0;
+                flex: 1;
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+            .grid-2col {
+                grid-template-columns: 1fr;
+            }
+            .fixed-nav {
+                padding: 0.5rem 1rem;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.4rem;
+            }
+            .nav-left {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-menu {
+                justify-content: center;
+            }
+            .lang-selector {
+                text-align: center;
+            }
+            .hero-banner h1 {
+                font-size: 1.6rem;
+            }
+            .policy-card {
+                padding: 1.2rem;
+            }
+            .simple-table th,
+            .simple-table td {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.85rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-banner {
+                margin: 0 0.5rem 1rem;
+                padding: 1.2rem 0.8rem;
+            }
+            .applicable-countries {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.8rem;
+            }
+            .policy-container {
+                padding: 0 0.5rem 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="fixed-nav" id="mainNav">
@@ -43,17 +395,26 @@
         <aside class="policy-toc">
             <h4>📋 فهرس سريع</h4>
             <ul class="toc-list">
+                <!-- 1. المنصة ومتطلبات المضيفات (保持不变) -->
                 <li><a href="#about">1. المنصة ومتطلبات المضيفات</a></li>
-                <li><a href="#call-income">2. أرباح المكالمات</a></li>
-                <li><a href="#tasks">3. المهام والمكافآت</a></li>
-                <li><a href="#withdraw">4. قواعد السحب</a></li>
-                <li><a href="#agency">5. عمولة الوكالة</a></li>
-                <li><a href="#regulations">6. القواعد والعقوبات</a></li>
-                <li><a href="#process">7. عملية التسجيل</a></li>
+                <!-- 7. عملية التسجيل (从第7位移到第2位) -->
+                <li><a href="#process">2. عملية التسجيل</a></li>
+                <!-- للفتيات (大标题) -->
+                <li class="section-head">👩🏻 للفتيات</li>
+                <!-- 以下4项缩进，放在 للفتيات 下面 -->
+                <li><a href="#call-income" class="sub-item">أرباح المكالمات</a></li>
+                <li><a href="#tasks" class="sub-item"> المهام والمكافآت</a></li>
+                <li><a href="#withdraw" class="sub-item"> قواعد السحب</a></li>
+                <li><a href="#regulations" class="sub-item">القواعد والعقوبات</a></li>
+                <!-- للوكالة (大标题) -->
+                <li class="section-head">🏢 للوكالة</li>
+                <!-- عمولة الوكالة 缩进，放在 للوكالة 下面 -->
+                <li><a href="#agency" class="sub-item">عمولة الوكالة</a></li>
             </ul>
         </aside>
 
         <div class="policy-content">
+            <!-- ===== 第1部分：المنصة ومتطلبات المضيفات ===== -->
             <section id="about" class="policy-card">
                 <div class="card-header">
                     <span class="icon">📌</span>
@@ -74,6 +435,38 @@
                 <div class="footnote">*لكل مضيفة حساب واحد فقط. مطلوب التحقق من الهوية بالوجه.</div>
             </section>
 
+            <!-- ===== 第2部分：عملية التسجيل (从第7位移到这里) ===== -->
+            <section id="process" class="policy-card">
+                <div class="card-header">
+                    <span class="icon">📱</span>
+                    <h2>عملية تسجيل المضيفات</h2>
+                </div>
+                <ol>
+                    <li>سجل الدخول إلى تطبيق YAMEET باستخدام حساب Gmail</li>
+                    <li>املأ المعلومات الشخصية للمضيفة ورمز وكالة الإيداع</li>
+                    <li>قم بإجراء التحقق من الوجه وفقاً للمتطلبات</li>
+                    <li>بعد اجتياز التحقق من الوجه، قم بتحميل صورتك الشخصية وثلاث صور (صور حقيقية فقط، الصور المزيفة لن تجتاز عملية الموافقة)</li>
+                    <li>انقر على "أيقونة الهدية" للدخول إلى دليل عمل المضيف الجديد</li>
+                    <li>أكمل دليل عمل المضيف الجديد لاستيفاء المتطلبات واربح ماس المكافأة</li>
+                    <li>بعد إكمال دليل عمل المضيف الجديد، سيتم فتح جميع وظائف تطبيق YAMEET</li>
+                </ol>
+                
+                <p style="margin-top:1.5rem;"><strong>إجراءات سحب أرباح المضيفة:</strong></p>
+                <ol>
+                    <li>انقر على "الصفحة الرئيسية"، ثم انقر على "أرباحي"</li>
+                    <li>عندما يصل رصيد الماس إلى 7000 ماسة، يمكن للمضيفة النقر على "سحب" (1000 ماسة = 1.5 دولار).</li>
+                    <li>املأ معلومات حساب الدفع حسب المتطلبات</li>
+                    <li>أدخل رصيد الماس الذي تريد سحبه وتأكد من صحة معلومات الدفع، ثم أرسل طلب السحب الذاتي</li>
+                    <li>بعد إرسال طلب السحب الذاتي، سيتم إيداع راتبك في حسابك في غضون 1-3 أيام عمل</li>
+                </ol>
+                
+                <p class="footnote">*إذا لم تستلم راتبك، يرجى إرسال "رقم السحب" إلى المسؤول وسيقوم بالتحقق من الوضع.</p>
+            </section>
+
+            <!-- ===== للفتيات 锚点 ===== -->
+            <div id="lilfatayat" style="scroll-margin-top: 90px;"></div>
+
+            <!-- ===== 第3部分：أرباح المكالمات (移到 للفتيات 下面) ===== -->
             <section id="call-income" class="policy-card">
                 <div class="card-header">
                     <span class="icon">📞</span>
@@ -83,40 +476,47 @@
                 <p><strong>1000 ماسة = 1.5 دولار</strong></p>
                 
                 <table class="simple-table">
-                    <tr>
-                        <th>نوع المكالمة</th>
-                        <th>السعر (الماس)</th>
-                    </tr>
-                    <tr>
-                        <td>مكالمة فيديو عادية</td>
-                        <td>30-60 ماسة/الدقيقة</td>
-                    </tr>
-                    <tr>
-                        <td>مكالمة مطابقة (match)</td>
-                        <td>أول 20 ثانية: 1 ماسة، ثم 1 ماسة كل 4 ثوانٍ</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>نوع المكالمة</th>
+                            <th>السعر (الماس)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>مكالمة فيديو عادية</td>
+                            <td>30-60 ماسة/الدقيقة</td>
+                        </tr>
+                        <tr>
+                            <td>مكالمة مطابقة (match)</td>
+                            <td>أول 20 ثانية: 1 ماسة، ثم 1 ماسة كل 4 ثوانٍ</td>
+                        </tr>
+                    </tbody>
                 </table>
                 
-                <p style="margin-top:1rem;"><span class="badge">الهدايا</span> يتم احتساب الهدايا بنسبة 1:1 ماسة</p>
+                <p style="margin-top:1rem;">الهدايا يتم احتساب الهدايا بنسبة 1:1 ماسة</p>
                 
                 <p class="footnote">*1000 ماسة = 1.5 دولار. لا يتغير راتب المضيفات مع اختلاف معدلات الرد أو كمية الماس.</p>
             </section>
 
+            <!-- ===== 第4部分：المهام والمكافآت (移到 للفتيات 下面) ===== -->
             <section id="tasks" class="policy-card">
                 <div class="card-header">
                     <span class="icon">🎁</span>
-                    <h2>(43$)المهام والمكافآت</h2>
+                    <h2>(68$)المهام والمكافآت</h2>
                 </div>
                 
                 <p><strong>🆕 مهام المضيفات الجدد</strong></p>
                 <ul>
                     <li>إكمال مهام المضيف الجديد</li>
-                    <li>المكافأة: 500 ماسة + فتح جميع الميزات</li>
+                    <li>مكافأة إضافية حصرية للمضيفات الجدد
+تحصل المضيفة الجديدة على مكافأة اضافية قدرها 2000 جوهرة (3 دولارات) عند وصولها </li>
                 </ul>
                 
                 <p style="margin-top:1rem;"><strong>📸 المهمة اليومية</strong></p>
                 <p style="font-size: 1.6rem; font-weight: 700; color: #003f6b;">10 ماسات</p>
-                <p>نشر منشور (مرة واحدة يوميًا)</p>
+                <p>الراتب الأساسي للمطابقة
+عند اكمال ساعتين من المطابقة لمدة 5 أيام أسبوعيا, ستحصل على 7000 جوهرة (10.5 دولار)</p>
                 
                 <p style="margin-top:1.5rem;"><strong>🎯 (5.2$) مكافآت المطابقة اليومية</strong></p>
                 <ul>
@@ -126,7 +526,8 @@
                     <li>إكمال 300 مكالمة مطابقة يومياً - 500 ألماس</li>
                     <li>إكمال 50 مكالمة مطابقة يومياً - 100 ألماس</li>
                 </ul>
-                <p>المكافآت موجودة في قائمة المهام وسيتم إضافتها إلى حسابك في الوقت الفعلي بعد الانتهاء منها.</p>
+                <p>مكافأة معدل فعالية المكالمات
+يمكنك الحصول على ما يصل الى 8000 جوهرة ( 12 دولار) أسبوعيا.</p>
                 
                 <p style="margin-top:1.5rem;"><strong>📺 مكافآت البث المباشر اليومي</strong></p>
                 <ul>
@@ -140,6 +541,7 @@
                 </div>
             </section>
 
+            <!-- ===== 第5部分：قواعد السحب (移到 للفتيات 下面) ===== -->
             <section id="withdraw" class="policy-card">
                 <div class="card-header">
                     <span class="icon">💳</span>
@@ -147,22 +549,24 @@
                 </div>
                 
                 <table class="simple-table">
-                    <tr>
-                        <td>الحد الأدنى للسحب</td>
-                        <td><strong>7,000 ماسة (حوالي 10 دولارات)</strong></td>
-                    </tr>
-                    <tr>
-                        <td>تكرار السحب</td>
-                        <td>مرة واحدة يومياً</td>
-                    </tr>
-                    <tr>
-                        <td>وقت استلام الراتب</td>
-                        <td>1-3 أيام عمل</td>
-                    </tr>
-                    <tr>
-                        <td>طرق الدفع</td>
-                        <td>Binance، تحويل بنكي</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td><strong>الحد الأدنى للسحب</strong></td>
+                            <td><strong>7,000 ماسة (حوالي 10 دولارات)</strong></td>
+                        </tr>
+                        <tr>
+                            <td>تكرار السحب</td>
+                            <td>مرة واحدة يومياً</td>
+                        </tr>
+                        <tr>
+                            <td>وقت استلام الراتب</td>
+                            <td>1-3 أيام عمل</td>
+                        </tr>
+                        <tr>
+                            <td>طرق الدفع</td>
+                            <td>Binance، تحويل بنكي</td>
+                        </tr>
+                    </tbody>
                 </table>
                 
                 <p style="margin-top:1.5rem;"><strong>للمضيفات:</strong></p>
@@ -189,56 +593,7 @@
                 <p class="footnote">*إذا قمت بالتعبئة بشكل خاطئ، فستتحمل المسؤولية بنفسك. بعد إرسال طلب السحب الذاتي، سيتم إيداع راتبك في حسابك في غضون 1-3 أيام عمل.</p>
             </section>
 
-            <section id="agency" class="policy-card">
-                <div class="card-header">
-                    <span class="icon">🏢</span>
-                    <h2>عمولة الوكالة</h2>
-                </div>
-                
-                <p><strong>عمولة الوكيل</strong></p>
-                <table class="simple-table">
-                    <tr>
-                        <th>عدد الماس في تسوية واحدة للفتاة</th>
-                        <th>نسبة عمولة الوكالة</th>
-                    </tr>
-                    <tr><td>7000-9999</td><td>8%</td></tr>
-                    <tr><td>10000-29999</td><td>10%</td></tr>
-                    <tr><td>أكثر من 30000</td><td>12%</td></tr>
-                </table>
-                <p>يتم احتساب عمولة الوكالة بناءً على عدد الماس الذي تقوم المضيفات بسحبه، ويتم الحساب على أساس أسبوع تقويمي طبيعي. إذا قامت المضيفة بالسحب عدة مرات خلال الأسبوع، فسيتم احتساب عمولة كل عملية سحب بشكل منفصل ثم جمعها للحصول على العمولة النهائية. بمجرد إتمام التسوية من قبل المضيفة، ستحصل تلقائيًا على العمولة المستحقة لك.</p>
-
-                <p style="margin-top:1.5rem;"><strong>مكافآت عمولة الوكالة</strong></p>
-                <table class="simple-table">
-                    <tr>
-                        <th>عدد الفتيات الذين يحصلون على الراتب</th>
-                        <th>مكافأة الوكيل</th>
-                    </tr>
-                    <tr><td>6-9</td><td>9$</td></tr>
-                    <tr><td>10-15</td><td>11$</td></tr>
-                    <tr><td>>15</td><td>13$</td></tr>
-                </table>
-                <p>غير تراكمي. سيتم إعادة حسابه عند تحديث جدول الرواتب أسبوعياً.</p>
-                
-                <p style="margin-top:1.5rem;"><strong>مكافآت دعوة المضيفات</strong></p>
-                <ul>
-                    <li>عند توثيق مضيفة واحدة → مكافأة 2 دولار</li>
-                </ul>
-                
-                <p style="margin-top:1.5rem;"><strong>مكافآت عمولة الوكالة للوكالات الجديدة</strong></p>
-                <table class="simple-table">
-                    <tr>
-                        <th>عدد الوكالات الجديدة الموصى بها</th>
-                        <th>مكافأة لكل وكالة</th>
-                    </tr>
-                    <tr><td>1-2</td><td>5$</td></tr>
-                    <tr><td>3-4</td><td>7$</td></tr>
-                    <tr><td>أكثر من 5</td><td>10$</td></tr>
-                </table>
-                <p>سيتم اعتبار الوكالة الجديدة التي يوصي بها BD نقابة صالحة إذا تم اعتماد 5 بنات خلال 7 أيام من الاثنين إلى الأحد. ستبدأ الوكالات الجديدة بدفع الراتب اعتباراً من يوم الاثنين التالي للتسجيل.</p>
-                
-                <p class="footnote">*مكافأة لفئة جديدة تصل إلى التسوية لأول مرة: كل فتاة / 2$</p>
-            </section>
-
+            <!-- ===== 第6部分：القواعد والعقوبات (移到 للفتيات 下面) ===== -->
             <section id="regulations" class="policy-card">
                 <div class="card-header">
                     <span class="icon">⚖️</span>
@@ -278,85 +633,141 @@
                 <p class="footnote">*يحتفظ هذا المنصة بالحق في تفسير جميع الأنشطة والسياسات ذات الصلة. لأية أسئلة، يرجى استشارة مدير التطبيق الخاص بنا.</p>
             </section>
 
-            <section id="process" class="policy-card">
+            <!-- ===== للوكالة 锚点 ===== -->
+            <div id="lilwakala" style="scroll-margin-top: 90px;"></div>
+
+            <!-- ===== 第7部分：عمولة الوكالة (移到 للوكالة 下面) ===== -->
+            <section id="agency" class="policy-card">
                 <div class="card-header">
-                    <span class="icon">📱</span>
-                    <h2>عملية تسجيل المضيفات</h2>
+                    <span class="icon">🏢</span>
+                    <h2>عمولة الوكالة</h2>
                 </div>
-                <ol>
-                    <li>سجل الدخول إلى تطبيق YAMEET باستخدام حساب Gmail</li>
-                    <li>املأ المعلومات الشخصية للمضيفة ورمز وكالة الإيداع</li>
-                    <li>قم بإجراء التحقق من الوجه وفقاً للمتطلبات</li>
-                    <li>بعد اجتياز التحقق من الوجه، قم بتحميل صورتك الشخصية وثلاث صور (صور حقيقية فقط، الصور المزيفة لن تجتاز عملية الموافقة)</li>
-                    <li>انقر على "أيقونة الهدية" للدخول إلى دليل عمل المضيف الجديد</li>
-                    <li>أكمل دليل عمل المضيف الجديد لاستيفاء المتطلبات واربح ماس المكافأة</li>
-                    <li>بعد إكمال دليل عمل المضيف الجديد، سيتم فتح جميع وظائف تطبيق YAMEET</li>
-                </ol>
                 
-                <p style="margin-top:1.5rem;"><strong>إجراءات سحب أرباح المضيفة:</strong></p>
-                <ol>
-                    <li>انقر على "الصفحة الرئيسية"، ثم انقر على "أرباحي"</li>
-                    <li>عندما يصل رصيد الماس إلى 7000 ماسة، يمكن للمضيفة النقر على "سحب" (1000 ماسة = 1.5 دولار).</li>
-                    <li>املأ معلومات حساب الدفع حسب المتطلبات</li>
-                    <li>أدخل رصيد الماس الذي تريد سحبه وتأكد من صحة معلومات الدفع، ثم أرسل طلب السحب الذاتي</li>
-                    <li>بعد إرسال طلب السحب الذاتي، سيتم إيداع راتبك في حسابك في غضون 1-3 أيام عمل</li>
-                </ol>
+                <p><strong>عمولة الوكيل</strong></p>
+                <table class="simple-table">
+                    <thead>
+                        <tr>
+                            <th>عدد الماس في تسوية واحدة للفتاة</th>
+                            <th>نسبة عمولة الوكالة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>7000-9999</td><td>8%</td></tr>
+                        <tr><td>10000-29999</td><td>10%</td></tr>
+                        <tr><td>أكثر من 30000</td><td>12%</td></tr>
+                    </tbody>
+                </table>
+                <p>يتم احتساب عمولة الوكالة بناءً على عدد الماس الذي تقوم المضيفات بسحبه، ويتم الحساب على أساس أسبوع تقويمي طبيعي. إذا قامت المضيفة بالسحب عدة مرات خلال الأسبوع، فسيتم احتساب عمولة كل عملية سحب بشكل منفصل ثم جمعها للحصول على العمولة النهائية. بمجرد إتمام التسوية من قبل المضيفة، ستحصل تلقائيًا على العمولة المستحقة لك.</p>
+
+                <p style="margin-top:1.5rem;"><strong>مكافآت عمولة الوكالة</strong></p>
+                <table class="simple-table">
+                    <thead>
+                        <tr>
+                            <th>عدد الفتيات الذين يحصلون على الراتب</th>
+                            <th>مكافأة الوكيل</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>6-9</td><td>9$</td></tr>
+                        <tr><td>10-15</td><td>11$</td></tr>
+                        <tr><td>>15</td><td>13$</td></tr>
+                    </tbody>
+                </table>
+                <p>غير تراكمي. سيتم إعادة حسابه عند تحديث جدول الرواتب أسبوعياً.</p>
                 
-                <p class="footnote">*إذا لم تستلم راتبك، يرجى إرسال "رقم السحب" إلى المسؤول وسيقوم بالتحقق من الوضع.</p>
+                <p style="margin-top:1.5rem;"><strong>مكافآت دعوة المضيفات</strong></p>
+                <ul>
+                    <li>عند توثيق مضيفة واحدة → مكافأة 2 دولار</li>
+                </ul>
+                
+                <p style="margin-top:1.5rem;"><strong>مكافآت عمولة الوكالة للوكالات الجديدة</strong></p>
+                <table class="simple-table">
+                    <thead>
+                        <tr>
+                            <th>عدد الوكالات الجديدة الموصى بها</th>
+                            <th>مكافأة لكل وكالة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1-2</td><td>5$</td></tr>
+                        <tr><td>3-4</td><td>7$</td></tr>
+                        <tr><td>أكثر من 5</td><td>10$</td></tr>
+                    </tbody>
+                </table>
+                <p>سيتم اعتبار الوكالة الجديدة التي يوصي بها BD نقابة صالحة إذا تم اعتماد 5 بنات خلال 7 أيام من الاثنين إلى الأحد. ستبدأ الوكالات الجديدة بدفع الراتب اعتباراً من يوم الاثنين التالي للتسجيل.</p>
+                
+                <p class="footnote">*مكافأة أول تسوية للمضيفة
+تحصل الوكالة على 2 دولار عن كل مضيفة تصل إلى التسوية لأول مرة خلال الأسبوع</p>
             </section>
         </div>
     </div>
 
     <div class="footer-note">
         © 2026 Yameet · سياسة المنطقة العربية · آخر تحديث: 2026.01.14
-</div>
+    </div>
 
-<script>
-// 语言映射表
-const languageMap = {
-    'en': 'index.html',
-    'en-US': 'index.html',
-    'en-GB': 'index.html',
-    'es': 'yameetEs.html',
-    'es-ES': 'yameetEs.html',
-    'pt': 'yameetPt.html',
-    'pt-BR': 'yameetPt.html',
-    'th': 'yameetTh.html',
-    'th-TH': 'yameetTh.html',
-    'ar': 'yameetAr.html',
-    'ar-SA': 'yameetAr.html',
-    'tr': 'yameetTr.html',
-    'tr-TR': 'yameetTr.html',
-    'id': 'yameetId.html',
-    'id-ID': 'yameetId.html'
-};
+    <script>
+        // 语言切换（保留原逻辑）
+        function switchRegion(value) {
+            if (value) {
+                window.location.href = value;
+            }
+        }
+        // 语言映射表
+        const languageMap = {
+            'en': 'index.html',
+            'en-US': 'index.html',
+            'en-GB': 'index.html',
+            'es': 'yameetEs.html',
+            'es-ES': 'yameetEs.html',
+            'pt': 'yameetPt.html',
+            'pt-BR': 'yameetPt.html',
+            'th': 'yameetTh.html',
+            'th-TH': 'yameetTh.html',
+            'ar': 'yameetAr.html',
+            'ar-SA': 'yameetAr.html',
+            'tr': 'yameetTr.html',
+            'tr-TR': 'yameetTr.html',
+            'id': 'yameetId.html',
+            'id-ID': 'yameetId.html'
+        };
 
-function getCurrentPage() {
-    const path = window.location.pathname;
-    const fileName = path.substring(path.lastIndexOf('/') + 1);
-    return fileName || 'index.html';
-}
+        function getCurrentPage() {
+            const path = window.location.pathname;
+            const fileName = path.substring(path.lastIndexOf('/') + 1);
+            return fileName || 'index.html';
+        }
 
-function getLanguagePage() {
-    const browserLang = navigator.language || navigator.userLanguage;
-    if (languageMap[browserLang]) return languageMap[browserLang];
-    const mainLang = browserLang.split('-')[0];
-    if (languageMap[mainLang]) return languageMap[mainLang];
-    return 'index.html';
-}
+        function getLanguagePage() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (languageMap[browserLang]) return languageMap[browserLang];
+            const mainLang = browserLang.split('-')[0];
+            if (languageMap[mainLang]) return languageMap[mainLang];
+            return 'index.html';
+        }
 
-function autoSwitchByLanguage() {
-    const currentPage = getCurrentPage();
-    const targetPage = getLanguagePage();
-    if (currentPage !== targetPage && !sessionStorage.getItem('redirected')) {
-        sessionStorage.setItem('redirected', 'true');
-        window.location.href = targetPage;
-    }
-}
+        function autoSwitchByLanguage() {
+            const currentPage = getCurrentPage();
+            const targetPage = getLanguagePage();
+            if (currentPage !== targetPage && !sessionStorage.getItem('redirected')) {
+                sessionStorage.setItem('redirected', 'true');
+                window.location.href = targetPage;
+            }
+        }
 
-autoSwitchByLanguage();
-</script>
+        autoSwitchByLanguage();
 
-<script src="yameet.js"></script>
+        // 保持select同步
+        document.addEventListener('DOMContentLoaded', function() {
+            const select = document.getElementById('regionSelect');
+            const current = getCurrentPage();
+            for (let opt of select.options) {
+                if (opt.value === current) {
+                    opt.selected = true;
+                    break;
+                }
+            }
+        });
+    </script>
 </body>
 </html>
